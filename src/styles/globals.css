@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  } */
+  body {
+    @apply h-screen w-screen;
+  }
+  .text-difference {
+    @apply text-white mix-blend-difference;
+  }
+  #__next {
+    @apply flex h-full w-full flex-col;
+  }
+}
