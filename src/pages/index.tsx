@@ -14,16 +14,6 @@ import {
 
 const Home: NextPage = () => {
   const [isDark, setDarkMode] = useState(true);
-  // const [text] = useTypewriter({
-  //   words: [
-  //     "WARRIOR STRONG",
-  //     // "We are all born to succeed",
-  //     "Society of Computer Developers",
-  //   ],
-  //   loop: false,
-  //   delaySpeed: 3500,
-  //   typeSpeed: 100,
-  // });
 
   return (
     <>
@@ -40,15 +30,19 @@ const Home: NextPage = () => {
         Toggle
       </button>
 
-      {/* Hero Section */}
-      <Hero darkMode={isDark} />
+      <Hero darkMode={isDark} imgSrc="SCDLanding.webp" />
+      <img src="" />
+      <Team />
     </>
   );
 };
 
 export default Home;
 
-const Hero: React.FC = ({ darkMode }) => {
+const Hero: React.FC<{ darkMode: boolean; imgSrc?: string }> = ({
+  darkMode,
+  imgSrc,
+}) => {
   const [text] = useTypewriter({
     words: [
       "WARRIOR STRONG",
@@ -62,27 +56,25 @@ const Hero: React.FC = ({ darkMode }) => {
 
   return (
     <>
-      {/* Hero Section */}
       <div
         className={
-          "flex h-full w-full flex-1 " + (darkMode ? "bg-heroDark" : "bg-hero")
+          "flex h-screen w-screen flex-1 " +
+          (darkMode ? "bg-heroDark" : "bg-hero")
         }
       >
-        {/* Left */}
-        <div className="flex h-full w-1/2 flex-col justify-center px-[3.125rem]">
-          <div className="text-difference text-5xl font-bold">
+        {/* Left Half*/}
+        <div className="flex h-screen w-1/2 flex-col justify-center px-[3.125rem]">
+          <div className="text-difference font-bold">
+            {/* SEO Header Elements */}
+            <h1 className="hidden"> Society of Computer Developers</h1>
+            <h2 className="hidden"> WARRIOR STRONG </h2>
             <h1>
-              {/* Span is there to render out an H1 Title for SEO, on load the website will use the typewriter text instead */}
-              {!text ? (
-                <span className="hidden">Society of Computer Developers</span>
-              ) : (
-                text
-              )}
+              {text}
               <Cursor cursorColor="text-difference" />
             </h1>
           </div>
 
-          <h2 className="pb-6 text-3xl text-green-500">
+          <h2 className="pb-6 text-green-500">
             Wayne State College of Engineering
           </h2>
           <p className="text-difference pb-6">
@@ -117,14 +109,36 @@ const Hero: React.FC = ({ darkMode }) => {
           </div>
         </div>
 
-        {/* Right */}
-        <div className="w-1/ h-full">
+        {/* Right Half*/}
+        <div className="w-1/ h-screen">
           <img
-            src="SCDLanding.webp"
+            src={imgSrc}
             className="h-[90%] w-auto"
             style={{ margin: "5% 0" }}
           />
         </div>
+      </div>
+    </>
+  );
+};
+
+const Team: React.FC = () => {
+  return (
+    <>
+      {/* <div className="relative h-[37.5rem] w-screen flex-col items-center justify-center bg-red-500 align-middle"> */}
+      <div className="bg-coe relative h-[37.5rem] w-screen flex-col items-center justify-center align-middle">
+        <h3 className="relative z-[1] py-4 text-center text-white">
+          Meet The Team
+        </h3>
+        <div className="relative z-[1] flex w-full items-center justify-center gap-[2rem]">
+          <div className="h-[26.875rem] w-[18.75rem] bg-white">
+            <div>
+              {/* <img src="../../public/people/Kelly_Whitlock.jpg" /> */}
+              <img src="Kelly_Whitlock.jpg" />
+            </div>
+          </div>
+        </div>
+        <div className="bg-coeShade absolute top-0 left-0 h-full w-full"></div>
       </div>
     </>
   );
