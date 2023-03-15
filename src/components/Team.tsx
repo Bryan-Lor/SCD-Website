@@ -5,7 +5,10 @@ const Team: React.FC = () => {
   return (
     <>
       {/* <div className="relative h-[37.5rem] w-screen flex-col items-center justify-center bg-red-500 align-middle"> */}
-      <div className="bg-coe relative w-screen flex-col items-center justify-center pb-12 align-middle">
+      <div
+        className="relative w-screen flex-col items-center justify-center object-cover pb-12 align-middle"
+        style={{ backgroundImage: "url('bg.webp')" }}
+      >
         <h3 className="relative z-[1] py-4 text-center text-2xl text-white">
           Meet The Team
         </h3>
@@ -23,7 +26,13 @@ const Team: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="bg-coeShade absolute top-0 left-0 h-full w-full"></div>
+        <div
+          className="absolute top-0 left-0 h-full w-full mix-blend-multiply"
+          style={{
+            background:
+              "linear-gradient(180deg, #2f2f2f 0%, #646464 11.98%, rgba(255, 255, 255, 0) 42.19%",
+          }}
+        ></div>
       </div>
     </>
   );

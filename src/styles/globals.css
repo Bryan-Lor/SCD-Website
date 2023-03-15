@@ -35,19 +35,6 @@
   .text-difference {
     @apply text-white mix-blend-difference;
   }
-  .bg-coe {
-    background-image: url("../../public/bg.webp");
-    background-size: cover;
-  }
-  .bg-coeShade {
-    background: linear-gradient(
-      180deg,
-      #2f2f2f 0%,
-      #646464 11.98%,
-      rgba(255, 255, 255, 0) 42.19%
-    );
-    mix-blend-mode: multiply;
-  }
   .hide-scroll-bar {
     -ms-overflow-style: none;
     scrollbar-width: none;
