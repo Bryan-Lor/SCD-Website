@@ -1,19 +1,31 @@
 import Image from "next/image";
 import TeamData from "~/data/TeamData";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 const Team: React.FC = () => {
   return (
     <>
-      {/* <div className="relative h-[37.5rem] w-screen flex-col items-center justify-center bg-red-500 align-middle"> */}
       <div
-        className="relative w-screen flex-col items-center justify-center object-cover pb-12 align-middle"
-        style={{ backgroundImage: "url('bg.webp')" }}
+        className="relative w-screen flex-col items-center justify-center object-contain pb-12 align-middle"
+        style={{
+          backgroundImage: "url('bg.webp')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          objectFit: "contain",
+        }}
       >
         <h3 className="relative z-[1] py-4 text-center text-2xl text-white">
           Meet The Team
+          <hr className="w-[20rem]" style={{ margin: "0 auto" }} />
         </h3>
         <div className="relative z-[1] flex w-full items-center justify-center ">
-          <div className="flex w-[102rem] snap-mandatory snap-proximity snap-start gap-8 overflow-x-scroll text-black">
+          <div
+            className="flex h-[28rem] w-[8rem] justify-center bg-red-500 text-center align-middle"
+            style={{ marginLeft: "auto", marginRight: "0" }} //FIX THIS I AM TRYING TO ALIGN LEFT ARROW TO RIGHT SIDE
+          >
+            <MdChevronLeft className="self-center bg-purple-500" size={40} />
+          </div>
+          <div className="flex w-[102rem] snap-mandatory snap-proximity snap-start gap-8 overflow-y-hidden overflow-x-scroll scroll-smooth text-black">
             {TeamData.map((person) => (
               <TeamCard
                 key={person.email}
@@ -24,6 +36,10 @@ const Team: React.FC = () => {
                 email={person.email}
               />
             ))}
+          </div>
+
+          <div className="flex h-[28rem] w-[8rem] justify-center bg-red-500 text-center align-middle">
+            <MdChevronRight className="self-center bg-purple-500" size={40} />
           </div>
         </div>
         <div
@@ -56,7 +72,7 @@ const TeamCard: React.FC<member> = ({
 }) => {
   return (
     <div>
-      <div className="h-[26.875rem] w-[18.75rem] bg-white">
+      <div className="h-[26.875rem] w-[18.75rem] bg-white duration-200 hover:scale-110">
         <Image
           className="h-[18.75rem] w-full object-cover"
           width={300}
@@ -69,7 +85,7 @@ const TeamCard: React.FC<member> = ({
             <b>{firstName}</b> {lastName}
           </h4>
           <h5>{role}</h5>
-          <h5>{email}</h5>
+          <h5 className="normal-case">{email}</h5>
         </div>
       </div>
     </div>
