@@ -1,5 +1,5 @@
 import Image from "next/image";
-import team from "~/data/team";
+import TeamData from "~/data/TeamData";
 
 const Team: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Team: React.FC = () => {
         </h3>
         <div className="relative z-[1] flex w-full items-center justify-center ">
           <div className="flex w-[102rem] snap-mandatory snap-proximity snap-start gap-8 overflow-x-scroll text-black">
-            {team.map((person) => (
+            {TeamData.map((person) => (
               <TeamCard
                 firstName={person.firstName}
                 lastName={person.lastName}

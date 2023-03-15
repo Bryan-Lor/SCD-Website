@@ -14,7 +14,7 @@ import Team from "~/components/Team";
 import { useSettingsContext } from "~/data/ThemeContext";
 
 const Home: NextPage = () => {
-  const { darkTheme, setDarkTheme } = useSettingsContext();
+  const { darkTheme } = useSettingsContext();
 
   return (
     <>

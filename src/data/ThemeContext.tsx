@@ -5,6 +5,6 @@ export type AppSettings = {
 };
 export const UserSettingsContext = createContext<AppSettings>({
   darkTheme: true, // set a default value
-  setDarkTheme: () => {},
+  setDarkTheme: (darkTheme) => !darkTheme,
 });
 export const useSettingsContext = () => useContext(UserSettingsContext);
