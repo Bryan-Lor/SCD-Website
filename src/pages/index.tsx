@@ -1,6 +1,5 @@
 import { type NextPage } from "next";
 import Link from "next/link";
-import { useState } from "react";
 import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
@@ -11,29 +10,17 @@ import {
   FaFacebook,
   FaYoutube,
 } from "react-icons/fa";
-import Image from "next/image";
-import team from "~/data/team";
+import Team from "~/components/Team";
+import { useSettingsContext } from "~/data/ThemeContext";
 
 const Home: NextPage = () => {
-  const [isDark, setDarkMode] = useState(true);
+  const { darkTheme, setDarkTheme } = useSettingsContext();
 
   return (
     <>
       <HeaderTag />
       <Nav />
-
-      <button
-        id="toggleDark"
-        className="z-3 text-difference absolute top-0 left-0 "
-        onClick={() => {
-          setDarkMode((current) => !current);
-        }}
-      >
-        Toggle
-      </button>
-
-      <Hero darkMode={isDark} imgSrc="SCDLanding.webp" />
-      <img src="" />
+      <Hero darkTheme={darkTheme} imgSrc="SCDLanding.webp" />
       <Team />
     </>
   );
@@ -41,8 +28,8 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const Hero: React.FC<{ darkMode: boolean; imgSrc?: string }> = ({
-  darkMode,
+const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
+  darkTheme,
   imgSrc,
 }) => {
   const [text] = useTypewriter({
@@ -61,7 +48,7 @@ const Hero: React.FC<{ darkMode: boolean; imgSrc?: string }> = ({
       <div
         className={
           "flex h-screen w-screen flex-1 " +
-          (darkMode ? "bg-heroDark" : "bg-hero")
+          (darkTheme ? "bg-heroDark" : "bg-hero")
         }
       >
         {/* Left Half*/}
@@ -119,39 +106,6 @@ const Hero: React.FC<{ darkMode: boolean; imgSrc?: string }> = ({
             style={{ margin: "5% 0" }}
           />
         </div>
-      </div>
-    </>
-  );
-};
-
-const Team: React.FC = () => {
-  return (
-    <>
-      {/* <div className="relative h-[37.5rem] w-screen flex-col items-center justify-center bg-red-500 align-middle"> */}
-      <div className="bg-coe relative w-screen flex-col items-center justify-center pb-12 align-middle">
-        <h3 className="relative z-[1] py-4 text-center text-2xl text-white">
-          Meet The Team
-        </h3>
-        <div className="relative z-[1] flex w-full items-center justify-center gap-[2rem] overflow-x-scroll">
-          {team.map((person) => (
-            <div className="h-[26.875rem] w-[18.75rem] bg-white">
-              <Image
-                className="h-[18.75rem] w-[18.75rem] object-cover"
-                width={300}
-                height={300}
-                src={person.imgSrc}
-                alt={"Picture of SCD " + person.role}
-              />
-              <div className="p-4 capitalize">
-                <h4>
-                  <b>{person.firstName}</b> {person.lastName}
-                </h4>
-                <h5>{person.role}</h5>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="bg-coeShade absolute top-0 left-0 h-full w-full"></div>
       </div>
     </>
   );

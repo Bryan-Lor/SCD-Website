@@ -1,1 +1,0 @@
-const isDark = false;

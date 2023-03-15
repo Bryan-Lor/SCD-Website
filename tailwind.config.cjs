@@ -17,7 +17,7 @@ const config = {
       body: ["Noto Sans", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
 
 module.exports = config;
