@@ -13,6 +13,7 @@ const Team: React.FC = () => {
           <div className="flex w-[102rem] snap-mandatory snap-proximity snap-start gap-8 overflow-x-scroll text-black">
             {TeamData.map((person) => (
               <TeamCard
+                key={person.email}
                 firstName={person.firstName}
                 lastName={person.lastName}
                 role={person.role}

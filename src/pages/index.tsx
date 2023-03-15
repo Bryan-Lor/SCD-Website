@@ -67,9 +67,9 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
             Wayne State College of Engineering
           </h2>
           <p className="text-difference pb-6">
-            Founded in Fall 2021 as Wayne State's sole Computer Science
-            organization, SCD is dedicated to creating opportunities for coding
-            and development enthusiasts. Regardless of your background or
+            Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
+            Science organization, SCD is dedicated to creating opportunities for
+            coding and development enthusiasts. Regardless of your background or
             experience in CS, we foster a supportive community that helps
             members with coding, resume building, networking, and skill
             development.
@@ -103,6 +103,7 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
           <img
             src={imgSrc}
             className="relative h-[90%] object-scale-down"
+            alt="Landing-Page Image"
             style={{ margin: "5% 0" }}
           />
         </div>
