@@ -7,6 +7,7 @@ import {
   FaFacebook,
   FaYoutube,
 } from "react-icons/fa";
+import SocialMediaLinks from "./SocialMediaLinks";
 
 const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
   darkTheme,
@@ -25,7 +26,7 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
 
   return (
     <>
-      <div className="container mx-auto flex max-w-screen-xl flex-col justify-center p-6 sm:py-12 lg:flex-row lg:justify-between lg:py-24">
+      <section className="container mx-auto flex max-w-screen-xl flex-col justify-center p-6 sm:py-12 lg:flex-row lg:justify-between lg:py-24">
         <div className="flex flex-col justify-center rounded-sm p-6 text-center lg:max-w-[50%] lg:text-left">
           {/* SEO Header Elements */}
           <h1 className="hidden"> Society of Computer Developers</h1>
@@ -35,7 +36,11 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
             {text}
             <Cursor cursorColor="text-difference" />
           </h1>
-          <h2 className="pb-4 text-green-500">
+          <h2
+            className={
+              "pb-4 " + (darkTheme ? "text-green-500" : "text-green-700")
+            }
+          >
             Wayne State College of Engineering
           </h2>
           {/* <p className="text-difference pb-6">
@@ -80,7 +85,7 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
             </Link>
           </div>
           <div className="text-difference flex justify-center gap-4 pt-8 sm:align-middle lg:justify-start lg:pt-16">
-            <Link href="" className="duration-200 hover:scale-110">
+            {/* <Link href="" className="duration-200 hover:scale-110">
               <FaGithub />
             </Link>
             <Link href="" className="duration-200 hover:scale-110">
@@ -94,7 +99,8 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
             </Link>
             <Link href="" className="duration-200 hover:scale-110">
               <FaYoutube />
-            </Link>
+            </Link> */}
+            <SocialMediaLinks />
           </div>
         </div>
         <div className="mt-8 flex h-72 items-center justify-center p-6 sm:h-80 lg:mt-0 lg:h-fit">
@@ -104,7 +110,7 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
             className="xl:h-112 2xl:h-128 h-72 object-contain sm:h-80 lg:h-96"
           />
         </div>
-      </div>
+      </section>
     </>
   );
 };

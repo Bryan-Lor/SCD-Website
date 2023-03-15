@@ -12,14 +12,16 @@ const Home: NextPage = () => {
   return (
     <>
       <HeaderTag />
-      <section
-        className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
-      >
-        <Nav />
-        <Hero darkTheme={darkTheme} imgSrc="SCDLanding.webp" />
-      </section>
-      <Team />
-      <Footer />
+      <main className="h-full w-full">
+        <div
+          className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
+        >
+          <Nav />
+          <Hero darkTheme={darkTheme} imgSrc="SCDLanding.webp" />
+        </div>
+        <Team />
+        <Footer />
+      </main>
     </>
   );
 };

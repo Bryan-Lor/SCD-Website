@@ -5,8 +5,8 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 const Team: React.FC = () => {
   return (
     <>
-      <div
-        className="relative w-screen flex-col items-center justify-center object-contain pb-12 align-middle"
+      <section
+        className="relative w-full flex-col items-center justify-center object-contain pb-12 align-middle"
         style={{
           backgroundImage: "url('bg.webp')",
           backgroundRepeat: "no-repeat",
@@ -49,7 +49,7 @@ const Team: React.FC = () => {
               "linear-gradient(180deg, #2f2f2f 0%, #646464 11.98%, rgba(255, 255, 255, 0) 42.19%",
           }}
         ></div>
-      </div>
+      </section>
     </>
   );
 };
