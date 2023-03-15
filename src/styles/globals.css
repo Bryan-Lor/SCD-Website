@@ -1,22 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;700;800&family=Teko:wght@400;500;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   #__next {
-    @apply flex flex-col;
+    @apply flex flex-col items-center justify-center align-middle;
+  }
+  h1,
+  h2 {
+    font-family: "Teko", "sans-serif";
+    font-weight: 400;
   }
   h1 {
-    @apply text-5xl;
+    @apply text-[4.75rem];
   }
   h2 {
-    @apply text-3xl;
+    @apply text-[2.5rem];
   }
   h3 {
-    @apply text-xl;
+    @apply text-4xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+  h5 {
+    @apply text-lg;
   }
   body {
-    @apply bg-black;
+    @apply bg-black text-2xl;
+    font-family: "Noto Sans", "sans-serif";
   }
   .text-difference {
     @apply text-white mix-blend-difference;
