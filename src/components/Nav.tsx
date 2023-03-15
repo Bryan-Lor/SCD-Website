@@ -15,10 +15,14 @@ const Nav: React.FC = () => {
           {/* <div className="mx-auto w-screen max-w-screen-xl px-4 sm:px-6 lg:px-8"> */}
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">
-              <a className="text-differenec block" href="/">
+              <Link className="text-differenec block" href="/">
                 <span className="sr-only">Home</span>
-                <img className="h-12 p-[0.0125rem]" src="scd_logo.png" />
-              </a>
+                <img
+                  className="h-12 p-[0.0125rem]"
+                  src="scd_logo.png"
+                  alt="SCD Logo"
+                />
+              </Link>
             </div>
 
             <div className="md:flex md:items-center md:gap-12">

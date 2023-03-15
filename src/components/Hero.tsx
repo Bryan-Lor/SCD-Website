@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import {
-  FaGithub,
-  FaInstagram,
-  FaTwitter,
-  FaFacebook,
-  FaYoutube,
-} from "react-icons/fa";
-import SocialMediaLinks from "./SocialMediaLinks";
+import SocialMediaLinks, { Links } from "./SocialMediaLinks";
 
 const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
   darkTheme,
@@ -43,14 +36,6 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
           >
             Wayne State College of Engineering
           </h2>
-          {/* <p className="text-difference pb-6">
-            Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
-            Science organization, SCD is dedicated to creating opportunities for
-            coding and development enthusiasts. Regardless of your experience or
-            background in CS, we foster a supportive community that helps
-            members with coding, resume building, networking, and skill
-            development.
-          </p> */}
           <p className="text-difference pb-6">
             Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
             Science organization, SCD is
@@ -71,35 +56,20 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
           <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-center sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
               rel="noopener noreferrer"
-              href="#"
+              href={Links.scd}
               className="rounded bg-yellowGrad px-8 py-2 text-base text-white"
             >
               Join Today
             </Link>
             <Link
               rel="noopener noreferrer"
-              href="#"
+              href={Links.githubPage}
               className="text-difference rounded px-8 py-3 text-base"
             >
               View GitHub
             </Link>
           </div>
           <div className="text-difference flex justify-center gap-4 pt-8 sm:align-middle lg:justify-start lg:pt-16">
-            {/* <Link href="" className="duration-200 hover:scale-110">
-              <FaGithub />
-            </Link>
-            <Link href="" className="duration-200 hover:scale-110">
-              <FaInstagram />
-            </Link>
-            <Link href="" className="duration-200 hover:scale-110">
-              <FaTwitter />
-            </Link>
-            <Link href="" className="duration-200 hover:scale-110">
-              <FaFacebook />
-            </Link>
-            <Link href="" className="duration-200 hover:scale-110">
-              <FaYoutube />
-            </Link> */}
             <SocialMediaLinks />
           </div>
         </div>
@@ -115,3 +85,11 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
   );
 };
 export default Hero;
+
+// Original paragraph description (Without Bolded Key Phrases)
+/* Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
+Science organization, SCD is dedicated to creating opportunities for
+coding and development enthusiasts. Regardless of your experience or
+background in CS, we foster a supportive community that helps
+members with coding, resume building, networking, and skill
+development. */

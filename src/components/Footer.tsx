@@ -1,23 +1,27 @@
 import Link from "next/link";
-import SocialMediaLinks from "./SocialMediaLinks";
+import SocialMediaLinks, { Links } from "./SocialMediaLinks";
 
 const Footer: React.FC = () => {
   return (
     <footer aria-label="Site Footer" className={"m-0 w-full bg-heroDark p-0"}>
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex justify-center">
-          <img className="h-24" src="scd_logo.png" alt="SCD Logo" />
-          <img
-            className="h-20 self-center align-middle"
-            // src="https://mac.wayne.edu/images/engineering_stacked_color.png" // Stacked WSU Engineering Banner
-            // src="https://mac.wayne.edu/images/engineering_horz_color.png" // Horizontal WSU Stacked Engineering Banner
-            // src="https://mac.wayne.edu/images/wsu_primary_horz_fnol_color.png" //Horizontal WSU Banner
-            src="https://mac.wayne.edu/images/shield_only_color.png" // WSU Shield
-            alt="SCD Logo"
-          />
+          <Link href={Links.scd} target="_blank">
+            <img className="h-24" src="scd_logo.png" alt="SCD Logo" />
+          </Link>
+          <Link href={Links.wayne} target="_blank">
+            <img
+              className="h-20 self-center align-middle"
+              // src="https://mac.wayne.edu/images/engineering_stacked_color.png" // Stacked WSU Engineering Banner
+              // src="https://mac.wayne.edu/images/engineering_horz_color.png" // Horizontal WSU Stacked Engineering Banner
+              // src="https://mac.wayne.edu/images/wsu_primary_horz_fnol_color.png" //Horizontal WSU Banner
+              src="https://mac.wayne.edu/images/shield_only_color.png" // WSU Shield
+              alt="SCD Logo"
+            />
+          </Link>
         </div>
 
-        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-400">
+        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-400 mix-blend-difference">
           Society of Computer Developers.
           <br />
           Wayne State University, College of Engineering.
