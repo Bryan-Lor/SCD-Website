@@ -7,7 +7,6 @@ import {
   FaFacebook,
   FaYoutube,
 } from "react-icons/fa";
-import Image from "next/image";
 
 const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
   darkTheme,
@@ -32,21 +31,37 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
           <h1 className="hidden"> Society of Computer Developers</h1>
           <h2 className="hidden"> WARRIOR STRONG </h2>
           {/* Typewriter */}
-          <h1>
+          <h1 className="text-difference">
             {text}
             <Cursor cursorColor="text-difference" />
           </h1>
           <h2 className="pb-4 text-green-500">
             Wayne State College of Engineering
           </h2>
+          {/* <p className="text-difference pb-6">
+            Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
+            Science organization, SCD is dedicated to creating opportunities for
+            coding and development enthusiasts. Regardless of your experience or
+            background in CS, we foster a supportive community that helps
+            members with coding, resume building, networking, and skill
+            development.
+          </p> */}
           <p className="text-difference pb-6">
             Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
-            Science organization, SCD is <b>dedicated to creating </b>
-            opportunities for coding and development enthusiasts.{" "}
-            <b> Regardless of your experience </b> or background in CS, we
-            foster a<b> supportive community </b> that helps members with{" "}
-            <b>coding</b>, <b>resume building</b>, <b>networking</b>, and{" "}
-            <b>skill development</b>.
+            Science organization, SCD is
+            <b className="font-semibold">
+              {" "}
+              dedicated to creating opportunities{" "}
+            </b>
+            for coding and development enthusiasts.
+            <b className="font-semibold"> Regardless of your experience </b>
+            or background in CS, we foster a
+            <b className="font-semibold"> supportive community </b>
+            that helps members with
+            <b className="font-semibold"> coding</b>,
+            <b className="font-semibold"> resume building</b>,
+            <b className="font-semibold"> networking</b>, and
+            <b className="font-semibold"> skill development</b>.
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-center sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
@@ -62,6 +77,23 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
               className="text-difference rounded px-8 py-3 text-base"
             >
               View GitHub
+            </Link>
+          </div>
+          <div className="text-difference flex justify-center gap-4 pt-8 sm:align-middle lg:justify-start lg:pt-16">
+            <Link href="" className="duration-200 hover:scale-110">
+              <FaGithub />
+            </Link>
+            <Link href="" className="duration-200 hover:scale-110">
+              <FaInstagram />
+            </Link>
+            <Link href="" className="duration-200 hover:scale-110">
+              <FaTwitter />
+            </Link>
+            <Link href="" className="duration-200 hover:scale-110">
+              <FaFacebook />
+            </Link>
+            <Link href="" className="duration-200 hover:scale-110">
+              <FaYoutube />
             </Link>
           </div>
         </div>

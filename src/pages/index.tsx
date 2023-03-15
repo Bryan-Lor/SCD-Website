@@ -4,6 +4,7 @@ import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
 import Hero from "~/components/Hero";
 import Team from "~/components/Team";
+import Footer from "~/components/Footer";
 
 const Home: NextPage = () => {
   const { darkTheme } = useSettingsContext();
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <Hero darkTheme={darkTheme} imgSrc="SCDLanding.webp" />
       </section>
       <Team />
+      <Footer />
     </>
   );
 };
