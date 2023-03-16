@@ -22,12 +22,14 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
       <section className="container mx-auto flex max-w-screen-xl flex-col justify-center p-6 sm:py-12 lg:flex-row lg:justify-between lg:py-24">
         <div className="flex flex-col justify-center rounded-sm p-6 text-center lg:max-w-[50%] lg:text-left">
           {/* SEO Header Elements */}
-          <h1 className="hidden"> Society of Computer Developers</h1>
-          <h2 className="hidden"> WARRIOR STRONG </h2>
+          <h1 className="sr-only"> Society of Computer Developers</h1>
+          <h2 className="sr-only"> WARRIOR STRONG </h2>
           {/* Typewriter */}
-          <h1 className="text-difference">
-            {text}
-            <Cursor cursorColor="text-difference" />
+          <h1 className="text-difference flex items-start sm:h-[9rem] sm:items-end lg:h-auto">
+            <span className="w-full sm:text-center lg:text-start">
+              {text}
+              <Cursor cursorColor="text-difference" />
+            </span>
           </h1>
           <h2
             className={
