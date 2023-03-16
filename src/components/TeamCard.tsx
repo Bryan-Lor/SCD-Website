@@ -16,7 +16,7 @@ const TeamCard: React.FC<member> = ({
   email,
 }) => {
   return (
-    <div className="relative w-full flex-shrink-0 flex-col overflow-hidden bg-white sm:w-auto">
+    <div className="relative w-full flex-shrink-0 flex-grow overflow-hidden bg-white md:w-auto">
       <Image
         className="h-[18.75rem] w-full object-cover object-center"
         width={300}
@@ -24,11 +24,11 @@ const TeamCard: React.FC<member> = ({
         src={imgSrc}
         alt={"Picture of SCD " + role}
       />
-      <div className="relative p-4 capitalize">
+      <div className="relative w-full p-4 capitalize">
         <h4>
           <b>{firstName}</b> {lastName}
         </h4>
-        <h5 className="pb-4">{role}</h5>
+        <h5 className="">{role}</h5>
         <h5 className="normal-case">{email}</h5>
       </div>
     </div>
