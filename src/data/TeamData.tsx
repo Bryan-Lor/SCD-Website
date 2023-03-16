@@ -37,7 +37,7 @@ const TeamData = [
   {
     firstName: "Nini",
     lastName: "Ola",
-    role: "Social Media Coordinator",
+    role: "Social Media Manager",
     imgSrc: "/people/Nini_Ola.jpg",
     email: "hd9510@wayne.edu",
   },

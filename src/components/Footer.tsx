@@ -31,13 +31,13 @@ const Footer: React.FC = () => {
           <ul className="text-difference flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12 ">
             <li>
               <Link className="transition hover:text-gray-400" href="/">
-                About
+                Events
               </Link>
             </li>
 
             <li>
               <Link className=" transition hover:text-gray-400" href="/">
-                Careers
+                Recordings
               </Link>
             </li>
 
@@ -49,19 +49,13 @@ const Footer: React.FC = () => {
 
             <li>
               <Link className="transition hover:text-gray-400" href="/">
-                Services
+                Donate
               </Link>
             </li>
 
             <li>
               <Link className="transition hover:text-gray-400" href="/">
-                Projects
-              </Link>
-            </li>
-
-            <li>
-              <Link className="transition hover:text-gray-400" href="/">
-                Blog
+                Contact Us
               </Link>
             </li>
           </ul>

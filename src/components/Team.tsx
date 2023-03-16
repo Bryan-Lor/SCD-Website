@@ -1,93 +1,117 @@
-import Image from "next/image";
-import TeamData from "~/data/TeamData";
+import { useEffect, useState } from "react";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import TeamData from "~/data/TeamData";
+import TeamCard from "./TeamCard";
 
-const Team: React.FC = () => {
+/* Using pure-react-carousel with modified carousel provided by tailwind ui kit */
+
+const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    console.log("Window Width" + { windowWidth });
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <>
-      <section
-        className="relative w-full flex-col items-center justify-center object-contain pb-12 align-middle"
-        style={{
-          backgroundImage: "url('bg.webp')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          objectFit: "contain",
-        }}
-      >
-        <h3 className="relative z-[1] py-4 text-center text-2xl text-white">
-          Meet The Team
-          <hr className="w-[20rem]" style={{ margin: "0 auto" }} />
-        </h3>
-        <div className="relative z-[1] flex w-full items-center justify-center ">
-          <div
-            className="flex h-[28rem] w-[8rem] justify-center bg-red-500 text-center align-middle"
-            style={{ marginLeft: "auto", marginRight: "0" }} //FIX THIS I AM TRYING TO ALIGN LEFT ARROW TO RIGHT SIDE
-          >
-            <MdChevronLeft className="self-center bg-purple-500" size={40} />
+    <section
+      className="relative w-full px-24 pb-12"
+      style={{
+        backgroundImage: "url('bg.webp')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        objectFit: "contain",
+      }}
+    >
+      <h3 className="relative z-[1] py-6 text-center text-xl uppercase text-white">
+        Meet our team
+        <hr className="mx-auto w-[20rem]" />
+      </h3>
+      <div
+        className="absolute top-0 left-0 h-full w-full mix-blend-multiply"
+        style={
+          darkTheme
+            ? {
+                background:
+                  "linear-gradient(180deg, #2f2f2f 0%, #646464 11.98%, rgba(255, 255, 255, 0) 42.19%",
+              }
+            : {
+                background:
+                  "linear-gradient(180deg, #FFFFFF 0%, #CDCDCD 24.48%, rgba(255, 255, 255, 0) 62.5%)",
+              }
+        }
+      />
+      <div className="mx-auto flex h-full w-full items-center justify-center bg-blue-500 px-4">
+        <CarouselProvider
+          // className=""
+          naturalSlideWidth={300}
+          naturalSlideHeight={430}
+          isIntrinsicHeight={true}
+          totalSlides={TeamData.length}
+          visibleSlides={windowWidth >= 768 ? 4 : 1}
+          // visibleSlides={4}
+          step={windowWidth >= 768 ? 4 : 1}
+          // step={4}
+          infinite={true}
+        >
+          <div className="relative flex w-full max-w-screen-xl items-center justify-center">
+            <ButtonBack
+              role="button"
+              aria-label="slide backward"
+              className="absolute left-0 z-30 cursor-pointer p-5 text-3xl text-gray-300 hover:text-gray-200 focus:text-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2"
+              id="prev"
+            >
+              <MdChevronLeft />
+            </ButtonBack>
+            <div className="mx-auto h-full w-full overflow-hidden">
+              <Slider>
+                <div
+                  id="slider"
+                  className="flex h-full items-center justify-start gap-8 px-14 transition duration-700 ease-out"
+                >
+                  {TeamData.map((person, index) => (
+                    <Slide index={index}>
+                      <TeamCard
+                        key={person.email}
+                        firstName={person.firstName}
+                        lastName={person.lastName}
+                        role={person.role}
+                        imgSrc={person.imgSrc}
+                        email={person.email}
+                      />
+                    </Slide>
+                  ))}
+                </div>
+              </Slider>
+            </div>
+            <ButtonNext
+              role="button"
+              aria-label="slide forward"
+              className="absolute right-0 z-30 p-5 text-3xl text-gray-300 focus:text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+              id="next"
+            >
+              <MdChevronRight />
+            </ButtonNext>
           </div>
-          <div className="flex w-[102rem] snap-mandatory snap-proximity snap-start gap-8 overflow-y-hidden overflow-x-scroll scroll-smooth text-black">
-            {TeamData.map((person) => (
-              <TeamCard
-                key={person.email}
-                firstName={person.firstName}
-                lastName={person.lastName}
-                role={person.role}
-                imgSrc={person.imgSrc}
-                email={person.email}
-              />
-            ))}
-          </div>
-
-          <div className="flex h-[28rem] w-[8rem] justify-center bg-red-500 text-center align-middle">
-            <MdChevronRight className="self-center bg-purple-500" size={40} />
-          </div>
-        </div>
-        <div
-          className="absolute top-0 left-0 h-full w-full mix-blend-multiply"
-          style={{
-            background:
-              "linear-gradient(180deg, #2f2f2f 0%, #646464 11.98%, rgba(255, 255, 255, 0) 42.19%",
-          }}
-        ></div>
-      </section>
-    </>
-  );
-};
-export default Team;
-
-interface member {
-  firstName: string;
-  lastName: string;
-  role: string;
-  imgSrc: string;
-  email: string;
-}
-
-const TeamCard: React.FC<member> = ({
-  firstName,
-  lastName,
-  role,
-  imgSrc,
-  email,
-}) => {
-  return (
-    <div>
-      <div className="h-[26.875rem] w-[18.75rem] bg-white duration-200 hover:scale-110">
-        <Image
-          className="h-[18.75rem] w-full object-cover"
-          width={300}
-          height={300}
-          src={imgSrc}
-          alt={"Picture of SCD " + role}
-        />
-        <div className="p-4 capitalize">
-          <h4>
-            <b>{firstName}</b> {lastName}
-          </h4>
-          <h5>{role}</h5>
-          <h5 className="normal-case">{email}</h5>
-        </div>
+        </CarouselProvider>
       </div>
-    </div>
+    </section>
   );
 };
+
+export default Team;

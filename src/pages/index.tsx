@@ -3,9 +3,9 @@ import { type NextPage } from "next";
 import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
 import Hero from "~/components/Hero";
-import Team from "~/components/Team";
 import Footer from "~/components/Footer";
 import Gallery from "~/components/Gallery";
+import Team from "~/components/Team";
 
 const Home: NextPage = () => {
   const { darkTheme } = useSettingsContext();
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           <Nav />
           <Hero darkTheme={darkTheme} imgSrc="SCDLanding.webp" />
         </div>
-        <Team />
+        <Team darkTheme={darkTheme} />
         <Gallery darkTheme={darkTheme} />
         <Footer />
       </main>
