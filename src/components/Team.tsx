@@ -17,7 +17,6 @@ const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    console.log("Window Width" + { windowWidth });
     function handleResize() {
       setWindowWidth(window.innerWidth);
     }
@@ -25,7 +24,11 @@ const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
     handleResize();
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    console.log("Window Width " + windowWidth);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      console.log("Window Width " + windowWidth);
+    };
   }, []);
 
   return (
@@ -56,60 +59,58 @@ const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
               }
         }
       />
-      <div className="mx-auto flex h-full w-full items-center justify-center bg-blue-500 px-4">
-        <CarouselProvider
-          // className=""
-          naturalSlideWidth={300}
-          naturalSlideHeight={430}
-          isIntrinsicHeight={true}
-          totalSlides={TeamData.length}
-          visibleSlides={windowWidth >= 768 ? 4 : 1}
-          // visibleSlides={4}
-          step={windowWidth >= 768 ? 4 : 1}
-          // step={4}
-          infinite={true}
-        >
-          <div className="relative flex w-full max-w-screen-xl items-center justify-center">
-            <ButtonBack
-              role="button"
-              aria-label="slide backward"
-              className="absolute left-0 z-30 cursor-pointer p-5 text-3xl text-gray-300 hover:text-gray-200 focus:text-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2"
-              id="prev"
-            >
-              <MdChevronLeft />
-            </ButtonBack>
-            <div className="mx-auto h-full w-full overflow-hidden">
-              <Slider>
-                <div
-                  id="slider"
-                  className="flex h-full items-center justify-start gap-8 px-14 transition duration-700 ease-out"
-                >
-                  {TeamData.map((person, index) => (
-                    <Slide index={index}>
-                      <TeamCard
-                        key={person.email}
-                        firstName={person.firstName}
-                        lastName={person.lastName}
-                        role={person.role}
-                        imgSrc={person.imgSrc}
-                        email={person.email}
-                      />
-                    </Slide>
-                  ))}
-                </div>
-              </Slider>
-            </div>
-            <ButtonNext
-              role="button"
-              aria-label="slide forward"
-              className="absolute right-0 z-30 p-5 text-3xl text-gray-300 focus:text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-              id="next"
-            >
-              <MdChevronRight />
-            </ButtonNext>
+      <CarouselProvider
+        className="mx-auto flex h-full w-full items-center justify-center bg-blue-500 px-4"
+        naturalSlideWidth={300}
+        naturalSlideHeight={430}
+        isIntrinsicHeight={true}
+        totalSlides={TeamData.length}
+        // visibleSlides={4}
+        visibleSlides={windowWidth >= 768 ? 4 : 1}
+        step={windowWidth >= 768 ? 4 : 1}
+        // step={4}
+        infinite={true}
+      >
+        <div className="relative flex w-full max-w-screen-xl items-center justify-center">
+          <ButtonBack
+            role="button"
+            aria-label="slide backward"
+            className="absolute left-0 z-30 cursor-pointer p-5 text-3xl text-gray-300 hover:text-gray-200 focus:text-white focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2"
+            id="prev"
+          >
+            <MdChevronLeft />
+          </ButtonBack>
+          <div className="mx-auto h-full w-full overflow-hidden">
+            <Slider>
+              <div
+                id="slider"
+                className="flex h-full items-center justify-start gap-8 px-14 transition duration-700 ease-out"
+              >
+                {TeamData.map((person, index) => (
+                  <Slide index={index}>
+                    <TeamCard
+                      key={person.email}
+                      firstName={person.firstName}
+                      lastName={person.lastName}
+                      role={person.role}
+                      imgSrc={person.imgSrc}
+                      email={person.email}
+                    />
+                  </Slide>
+                ))}
+              </div>
+            </Slider>
           </div>
-        </CarouselProvider>
-      </div>
+          <ButtonNext
+            role="button"
+            aria-label="slide forward"
+            className="absolute right-0 z-30 p-5 text-3xl text-gray-300 focus:text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+            id="next"
+          >
+            <MdChevronRight />
+          </ButtonNext>
+        </div>
+      </CarouselProvider>
     </section>
   );
 };
