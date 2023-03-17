@@ -44,6 +44,7 @@ const WeeklySchedule: React.FC = () => {
 
 export default WeeklySchedule;
 
+// Calendar Date Element --------------------------------------------
 const CalendarDate: React.FC<{
   isCurrentDate: boolean;
   isEventDate?: boolean;
@@ -60,7 +61,7 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "hover-light-shadow group mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#C3FAB8] hover:shadow-lg";
+    "relative hover-light-shadow group mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#C3FAB8] hover:shadow-lg";
   const eventDateClass =
     "light-shadow group relative mx-1 flex w-16 cursor-pointer content-center justify-center rounded-lg bg-[#86D376] shadow-lg";
 
@@ -83,6 +84,7 @@ const CalendarDate: React.FC<{
   );
 };
 
+// Calendar Event Ping Element --------------------------------------------
 const EventPing: React.FC<{ color: string; colorBright: string }> = ({
   color,
   colorBright,
