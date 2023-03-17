@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
           <h1 className="sr-only"> Society of Computer Developers</h1>
           <h2 className="sr-only"> WARRIOR STRONG </h2>
           {/* Typewriter */}
-          <h1 className="text-difference flex items-start sm:h-[9rem] sm:items-end lg:h-auto">
+          <h1 className="text-difference flex h-[9rem] items-end lg:h-auto">
             <span className="w-full sm:text-center lg:text-start">
               {text}
               <Cursor cursorColor="text-difference" />
