@@ -6,21 +6,17 @@ const WeeklySchedule: React.FC = () => {
   const week: number[] = [];
 
   for (let i = 1; i <= 7; i++) {
-    let first = curr.getDate() - curr.getDay() + i;
-    let day = new Date(curr.setDate(first)).getDate();
+    const first = curr.getDate() - curr.getDay() + i;
+    const day = new Date(curr.setDate(first)).getDate();
     week.push(day - 1);
   }
-
-  const dateClass =
-    "hover-light-shadow group mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#C3FAB8] hover:shadow-lg";
-  const eventDateClass =
-    "light-shadow group relative mx-1 flex w-16 cursor-pointer content-center justify-center rounded-lg bg-[#86D376] shadow-lg";
 
   return (
     <>
       <div className="lg:max-w-screenxl mx-auto flex justify-start py-4 px-2 sm:max-w-screen-sm md:mx-12 md:max-w-screen-md md:justify-center">
         {weekDays.map((dateName: string, index: number) => (
           <CalendarDate
+            key={index}
             isCurrentDate={currDate === week[index]}
             isEventDate={eventDates.includes(dateName)}
             eventColor={
