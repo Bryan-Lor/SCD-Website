@@ -3,10 +3,7 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import SocialMediaLinks from "./SocialMediaLinks";
 import { Links } from "~/data/Links";
 
-const Hero: React.FC<{ darkTheme?: boolean; imgSrc?: string }> = ({
-  darkTheme,
-  imgSrc,
-}) => {
+const Hero: React.FC = () => {
   const [text] = useTypewriter({
     words: [
       "WARRIOR STRONG",
@@ -35,11 +32,7 @@ const Hero: React.FC<{ darkTheme?: boolean; imgSrc?: string }> = ({
           <Link href={Links.wayne} target="_blank">
             <h2
               className={
-                "pb-4 " +
-                "bg-gradient-to-t  from-green-900 to-green-500 bg-clip-text text-transparent"
-                // (darkTheme
-                //   ? "bg-gradient-to-t  from-green-900 to-green-500 bg-clip-text text-transparent "
-                //   : // : "bg-gradient-to-t  from-green-900 to-green-700 bg-clip-text text-transparent ")
+                "bg-gradient-to-t from-green-900  to-green-500 bg-clip-text pb-4 text-transparent"
               }
             >
               Wayne State College of Engineering

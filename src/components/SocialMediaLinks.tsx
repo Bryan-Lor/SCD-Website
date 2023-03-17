@@ -10,16 +10,16 @@ import {
 import { Links } from "~/data/Links";
 
 const SocialMediaLinks: React.FC = () => {
-  const socialMediaLinks = [
-    "github",
-    "linkedin",
-    "instagram",
-    "twitter",
-    "facebook",
-    "youtube",
-  ];
+  // const socialMediaLinks = [
+  //   "github",
+  //   "linkedin",
+  //   "instagram",
+  //   "twitter",
+  //   "facebook",
+  //   "youtube",
+  // ];
 
-  const className: string = "duration-200 hover:scale-125";
+  const className = "duration-200 hover:scale-125";
 
   return (
     <>
