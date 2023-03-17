@@ -61,11 +61,11 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "relative hover-light-shadow group w-full mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#EEFFEB] hover:shadow-lg";
+    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16  cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#EEFFEB] hover:shadow-lg";
   const eventDateClass =
-    "light-shadow group relative mx-1 w-full flex w-16 cursor-pointer content-center justify-center rounded-lg outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
+    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-lg outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
   const currentDateClass =
-    "light-shadow group relative mx-1 w-full flex w-16 cursor-pointer content-center justify-center rounded-lg bg-[#9BF788] shadow-lg ";
+    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-lg bg-[#9BF788] shadow-lg ";
 
   return (
     <div
@@ -80,7 +80,7 @@ const CalendarDate: React.FC<{
       {isEventDate ? (
         <EventPing color={eventColor} colorBright={eventBrightColor} />
       ) : null}
-      <div className="flex items-center px-4 py-4">
+      <div className="flex items-center px-2 py-2 sm:px-2 sm:py-2 md:px-4 md:py-4">
         <div className="text-center">
           <p className="text-sm text-gray-300 mix-blend-difference transition-all duration-300">
             {dateName}

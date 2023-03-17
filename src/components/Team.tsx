@@ -15,7 +15,7 @@ import TeamCard from "./TeamCard";
 const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
   return (
     <section
-      className="relative w-full overflow-hidden px-24 pb-12"
+      className="relative w-full overflow-hidden px-10 pb-16 sm:px-16 md:px-10 lg:px-8"
       style={{
         backgroundImage: "url('bg.webp')",
         backgroundRepeat: "no-repeat",

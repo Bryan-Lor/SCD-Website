@@ -11,7 +11,7 @@ const EventPreview: React.FC<{ darkTheme: boolean }> = ({
         // (darkTheme ? "bg-heroDark" : "bg-hero")
       }
     >
-      <div className="lg:max-w-screenxl mx-auto flex flex-col justify-start py-4 px-2 sm:max-w-screen-sm md:mx-12 md:max-w-screen-md md:justify-center">
+      <div className="mx-auto flex flex-col justify-start py-8 px-8 sm:max-w-screen-sm md:mx-12 md:max-w-screen-md md:justify-center md:py-4 md:px-2 lg:max-w-screen-xl">
         <h3>Weekly Events</h3>
         <hr className="pb-2" />
         <p>
@@ -20,7 +20,7 @@ const EventPreview: React.FC<{ darkTheme: boolean }> = ({
           duis ultricies lacus sed turpis tincidunt. Dignissim convallis aenean
           et tortor at risus viverra.
         </p>
-        <button>View More</button>
+        <button className="py-2 pb-2 sm:pb-2 md:pb-8">View More</button>
       </div>
       <WeeklySchedule />
       {/* </div> */}
