@@ -84,6 +84,7 @@ const TeamCarousel: React.FC<{
       visibleSlides={visibeSlides ? visibeSlides : 1}
       step={step ? step : 1}
       infinite={true}
+      isPlaying={true}
     >
       <div className="relative flex w-full items-center justify-center">
         <ButtonBackSlide />

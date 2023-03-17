@@ -1,5 +1,6 @@
 import Link from "next/link";
-import SocialMediaLinks, { Links } from "./SocialMediaLinks";
+import SocialMediaLinks from "./SocialMediaLinks";
+import { Links } from "~/data/Links";
 
 const Footer: React.FC = () => {
   return (
@@ -65,7 +66,7 @@ const Footer: React.FC = () => {
           <SocialMediaLinks />
         </div>
         <div className="text-difference pt-8 text-center text-sm font-thin">
-          Copyright &copy; 2023 SCD. All rights reserved.
+          Copyright &copy; {new Date().getFullYear()} SCD. All rights reserved.
         </div>
       </div>
     </footer>

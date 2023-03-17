@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useSettingsContext } from "~/data/ThemeContext";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
+import { MdMenu } from "react-icons/md";
 
 const Nav: React.FC = () => {
   const { darkTheme, setDarkTheme } = useSettingsContext();
@@ -38,7 +39,12 @@ const Nav: React.FC = () => {
                   </li>
                   <li>
                     <Link
-                      className="text-difference transition hover:text-gray-500/75"
+                      className={
+                        "transition " +
+                        (darkTheme
+                          ? "text-difference hover:text-gray-400"
+                          : "mix-blend-normal hover:text-white")
+                      }
                       href="/"
                     >
                       Events
@@ -47,7 +53,12 @@ const Nav: React.FC = () => {
 
                   <li>
                     <Link
-                      className="text-difference transition hover:text-gray-500/75"
+                      className={
+                        "transition " +
+                        (darkTheme
+                          ? "text-difference hover:text-gray-400"
+                          : "mix-blend-normal hover:text-white")
+                      }
                       href="/"
                     >
                       Recordings
@@ -56,7 +67,12 @@ const Nav: React.FC = () => {
 
                   <li>
                     <Link
-                      className="text-difference transition hover:text-gray-500/75"
+                      className={
+                        "transition " +
+                        (darkTheme
+                          ? "text-difference hover:text-gray-400"
+                          : "mix-blend-normal hover:text-white")
+                      }
                       href="/"
                     >
                       Donate
@@ -69,7 +85,12 @@ const Nav: React.FC = () => {
                 <div className="sm:flex sm:gap-4">
                   <div className="hidden sm:flex">
                     <Link
-                      className="text-difference rounded-md px-5 py-2.5 text-sm font-medium outline outline-1"
+                      className={
+                        "rounded-md px-5 py-2.5 text-sm font-medium outline outline-1 transition " +
+                        (darkTheme
+                          ? "text-difference hover:text-gray-400"
+                          : "mix-blend-normal hover:text-white")
+                      }
                       href="/"
                     >
                       Contact Us
@@ -78,21 +99,8 @@ const Nav: React.FC = () => {
                 </div>
 
                 <div className="block md:hidden">
-                  <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M4 6h16M4 12h16M4 18h16"
-                      />
-                    </svg>
+                  <button className="rounded bg-gray-100 p-2 text-gray-600 mix-blend-difference transition hover:text-gray-600/75">
+                    <MdMenu />
                   </button>
                 </div>
               </div>

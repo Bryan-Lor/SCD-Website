@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import SocialMediaLinks, { Links } from "./SocialMediaLinks";
+import SocialMediaLinks from "./SocialMediaLinks";
+import { Links } from "~/data/Links";
 
-const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
+const Hero: React.FC<{ darkTheme?: boolean; imgSrc?: string }> = ({
   darkTheme,
   imgSrc,
 }) => {
@@ -31,13 +32,19 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
               <Cursor cursorColor="text-difference" />
             </span>
           </h1>
-          <h2
-            className={
-              "pb-4 " + (darkTheme ? "text-green-500" : "text-green-700")
-            }
-          >
-            Wayne State College of Engineering
-          </h2>
+          <Link href={Links.wayne} target="_blank">
+            <h2
+              className={
+                "pb-4 " +
+                "bg-gradient-to-t  from-green-900 to-green-500 bg-clip-text text-transparent"
+                // (darkTheme
+                //   ? "bg-gradient-to-t  from-green-900 to-green-500 bg-clip-text text-transparent "
+                //   : // : "bg-gradient-to-t  from-green-900 to-green-700 bg-clip-text text-transparent ")
+              }
+            >
+              Wayne State College of Engineering
+            </h2>
+          </Link>
           <p className="text-difference pb-6">
             Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
             Science organization, SCD is
@@ -59,14 +66,14 @@ const Hero: React.FC<{ darkTheme: boolean; imgSrc?: string }> = ({
             <Link
               rel="noopener noreferrer"
               href={Links.scd}
-              className="rounded bg-yellowGrad px-8 py-2 text-base text-white"
+              className="rounded bg-yellowGrad px-8 py-2 text-base text-white duration-200 hover:scale-105"
             >
               Join Today
             </Link>
             <Link
               rel="noopener noreferrer"
               href={Links.githubPage}
-              className="text-difference rounded px-8 py-3 text-base"
+              className="text-difference rounded px-8 py-3 text-base duration-200 hover:text-gray-400"
             >
               View GitHub
             </Link>
