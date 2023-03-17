@@ -16,6 +16,9 @@ const config = {
       sans: ["Noto Sans", "sans-serif"],
       body: ["Noto Sans", "sans-serif"],
     },
+    // screens: {
+    //   md: "850px",
+    // },
   },
   plugins: [],
 };
