@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           <Hero />
         </div>
         <Team darkTheme={darkTheme} />
-        <EventPreview />
+        <EventPreview darkTheme={darkTheme} />
         <Gallery darkTheme={darkTheme} />
         <Footer />
       </main>

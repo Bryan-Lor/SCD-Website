@@ -21,17 +21,17 @@ const WeeklySchedule: React.FC = () => {
             isEventDate={eventDates.includes(dateName)}
             eventColor={
               dateName === eventDates[0]
-                ? "bg-green-400"
-                : dateName === eventDates[1]
-                ? "bg-red-400"
-                : "bg-purple-400"
-            }
-            eventBrightColor={
-              dateName === eventDates[0]
-                ? "bg-green-500"
+                ? "bg-yellow-500"
                 : dateName === eventDates[1]
                 ? "bg-red-500"
                 : "bg-purple-500"
+            }
+            eventBrightColor={
+              dateName === eventDates[0]
+                ? "bg-yellow-300"
+                : dateName === eventDates[1]
+                ? "bg-red-300"
+                : "bg-purple-300"
             }
             dateName={dateName}
             dateNum={week[index]}
@@ -61,21 +61,31 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "relative hover-light-shadow group mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#C3FAB8] hover:shadow-lg";
+    "relative hover-light-shadow group mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#EEFFEB] hover:shadow-lg";
   const eventDateClass =
-    "light-shadow group relative mx-1 flex w-16 cursor-pointer content-center justify-center rounded-lg bg-[#86D376] shadow-lg";
+    "light-shadow group relative mx-1 flex w-16 cursor-pointer content-center justify-center rounded-lg outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
+  const currentDateClass =
+    "light-shadow group relative mx-1 flex w-16 cursor-pointer content-center justify-center rounded-lg bg-[#9BF788] shadow-lg ";
 
   return (
-    <div className={isCurrentDate ? eventDateClass : dateClass}>
+    <div
+      className={
+        isCurrentDate
+          ? currentDateClass
+          : isEventDate
+          ? eventDateClass
+          : dateClass
+      }
+    >
       {isEventDate ? (
         <EventPing color={eventColor} colorBright={eventBrightColor} />
       ) : null}
       <div className="flex items-center px-4 py-4">
         <div className="text-center">
-          <p className="text-sm text-gray-900 transition-all duration-300">
+          <p className="text-sm text-gray-300 mix-blend-difference transition-all duration-300">
             {dateName}
           </p>
-          <p className="mt-3 text-gray-900 transition-all duration-300 group-hover:font-bold">
+          <p className="mt-3 text-gray-300 mix-blend-difference transition-all duration-300 group-hover:font-bold">
             {dateNum}
           </p>
         </div>
