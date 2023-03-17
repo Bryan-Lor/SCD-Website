@@ -54,7 +54,7 @@ const CalendarDate: React.FC<{
   eventColor?: string;
   eventBrightColor?: string;
   dateName: string;
-  dateNum: number;
+  dateNum: number | undefined;
 }> = ({
   isCurrentDate = false,
   isEventDate = false,
