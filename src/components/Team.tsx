@@ -10,7 +10,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import TeamData from "~/data/TeamData";
 import TeamCard from "./TeamCard";
 
-/* Using pure-react-carousel with modified carousel provided by tailwind ui kit */
+/* Using pure-react-carousel*/
 
 const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
   return (
@@ -95,7 +95,7 @@ const TeamCarousel: React.FC<{
             >
               {/* Team Cards */}
               {TeamData.map((person, index) => (
-                <Slide index={index}>
+                <Slide key={index} index={index}>
                   <TeamCard
                     key={person.email}
                     firstName={person.firstName}
