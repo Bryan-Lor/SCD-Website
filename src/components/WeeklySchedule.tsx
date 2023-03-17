@@ -13,7 +13,7 @@ const WeeklySchedule: React.FC = () => {
 
   return (
     <>
-      <div className="lg:max-w-screenxl mx-auto flex justify-start py-4 px-2 sm:max-w-screen-sm md:mx-12 md:max-w-screen-md md:justify-center">
+      <div className="mx-auto flex justify-start py-4 px-2 sm:max-w-screen-sm md:mx-12 md:max-w-screen-md md:justify-center lg:max-w-screen-xl">
         {weekDays.map((dateName: string, index: number) => (
           <CalendarDate
             key={index}
@@ -61,11 +61,11 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "relative hover-light-shadow group mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#EEFFEB] hover:shadow-lg";
+    "relative hover-light-shadow group w-full mx-1 flex w-16 cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#EEFFEB] hover:shadow-lg";
   const eventDateClass =
-    "light-shadow group relative mx-1 flex w-16 cursor-pointer content-center justify-center rounded-lg outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
+    "light-shadow group relative mx-1 w-full flex w-16 cursor-pointer content-center justify-center rounded-lg outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
   const currentDateClass =
-    "light-shadow group relative mx-1 flex w-16 cursor-pointer content-center justify-center rounded-lg bg-[#9BF788] shadow-lg ";
+    "light-shadow group relative mx-1 w-full flex w-16 cursor-pointer content-center justify-center rounded-lg bg-[#9BF788] shadow-lg ";
 
   return (
     <div

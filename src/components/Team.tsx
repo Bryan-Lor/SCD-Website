@@ -15,7 +15,7 @@ import TeamCard from "./TeamCard";
 const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
   return (
     <section
-      className="relative w-full px-24 pb-12"
+      className="relative w-full overflow-hidden px-24 pb-12"
       style={{
         backgroundImage: "url('bg.webp')",
         backgroundRepeat: "no-repeat",
@@ -25,7 +25,7 @@ const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
     >
       <h3 className="relative z-[1] py-6 text-center text-xl uppercase text-white">
         Meet our team
-        <hr className="mx-auto w-[20rem]" />
+        <hr className="mx-auto w-[15rem] max-sm:w-[11.75rem]" />
       </h3>
 
       {/* Extra Large Screen Devices min-w-1024px */}

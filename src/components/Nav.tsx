@@ -11,7 +11,7 @@ const Nav: React.FC = () => {
       <nav>
         <header
           aria-label="Site Header"
-          className="relative mx-auto w-screen max-w-screen-xl px-4 sm:px-6 lg:px-8"
+          className="relative mx-auto w-full px-4 sm:max-w-screen-sm sm:px-6 md:max-w-screen-md lg:max-w-screen-xl lg:px-8"
         >
           <div className="flex h-16 items-center justify-between">
             <div className="flex-1 md:flex md:items-center md:gap-12">

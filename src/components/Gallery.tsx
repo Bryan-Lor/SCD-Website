@@ -3,9 +3,7 @@ import { GalleryImages } from "~/data/GalleryImages";
 const Gallery: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
   return (
     <section
-      className={
-        "text-difference py-16 " + (darkTheme ? "bg-heroDark" : "bg-hero")
-      }
+      className={"py-16 " + (darkTheme ? "bg-heroDark" : "bg-hero")}
       style={{
         background:
           "linear-gradient(to bottom, #b5bdc8 0%,#828c95 36%,#28343b 100%)",
