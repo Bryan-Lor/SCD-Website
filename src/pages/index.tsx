@@ -19,7 +19,7 @@ const Home: NextPage = () => {
           className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
         >
           <Nav />
-          <Hero darkTheme={darkTheme} imgSrc="SCDLanding.webp" />
+          <Hero />
         </div>
         <Team darkTheme={darkTheme} />
         <EventPreview />
