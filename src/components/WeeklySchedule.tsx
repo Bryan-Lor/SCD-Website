@@ -61,7 +61,7 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16  cursor-pointer justify-center rounded-lg transition-all duration-300 hover:bg-[#EEFFEB] hover:shadow-lg";
+    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16  cursor-pointer justify-center rounded-lg transition-all duration-300 md:hover:bg-[#EEFFEB] md:hover:shadow-lg";
   const eventDateClass =
     "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-lg outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
   const currentDateClass =
@@ -85,7 +85,7 @@ const CalendarDate: React.FC<{
           <p className="text-sm text-gray-300 mix-blend-difference transition-all duration-300">
             {dateName}
           </p>
-          <p className="mt-3 text-gray-300 mix-blend-difference transition-all duration-300 group-hover:font-bold">
+          <p className="mt-3 text-gray-300 mix-blend-difference transition-all duration-300 md:group-hover:font-bold">
             {dateNum}
           </p>
         </div>
@@ -103,7 +103,7 @@ const EventPing: React.FC<{ color: string; colorBright: string }> = ({
     <span className="absolute -top-1 -right-1 flex h-3 w-3">
       <span
         className={
-          "absolute inline-flex h-full w-full animate-ping rounded-full opacity-0 group-hover:opacity-75 " +
+          "absolute inline-flex h-full w-full animate-ping rounded-full opacity-0 md:group-hover:opacity-75 " +
           colorBright
         }
       ></span>

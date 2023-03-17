@@ -20,9 +20,7 @@ const TeamCard: React.FC<member> = ({
     <div className="relative flex-shrink-0 flex-grow overflow-hidden bg-white">
       <div className="w-[18.75rem relative h-[18.75rem] overflow-hidden">
         <Image
-          className="object-cover object-center transition duration-[225ms] ease-in lg:hover:scale-105"
-          // width={300}
-          // height={300}
+          className="object-cover object-center transition duration-[225ms] ease-in md:hover:scale-105"
           fill
           src={imgSrc}
           alt={"Picture of SCD " + role}

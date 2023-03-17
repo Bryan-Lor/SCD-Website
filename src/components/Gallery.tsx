@@ -1,6 +1,10 @@
 import { GalleryImages } from "~/data/GalleryImages";
 
 const Gallery: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
+  const BigBoxClass =
+    "min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm md:transition md:duration-500 md:ease-in-out md:hover:scale-105 ";
+  const SmallBoxClass =
+    "min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm md:transition md:duration-500 md:ease-in-out md:hover:scale-105";
   return (
     <section
       className={"py-16 " + (darkTheme ? "bg-heroDark" : "bg-hero")}
@@ -11,56 +15,56 @@ const Gallery: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
       }}
     >
       <h3 className="sr-only">Photo Gallery</h3>
-      <div className="container mx-auto grid grid-cols-2 gap-4 p-4 md:grid-cols-4">
+      <div className="mx-auto grid max-w-screen-sm grid-cols-2 gap-4 p-4 md:max-w-screen-md md:grid-cols-4 lg:max-w-screen-xl lg:px-4">
         <img
           src={GalleryImages[0]?.url}
           alt={GalleryImages[0]?.desc}
-          className="min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105 md:col-start-3 md:row-start-1"
+          className={BigBoxClass + "md:col-start-3 md:row-start-1"}
         />
         <img
           src={GalleryImages[1]?.url}
           alt={GalleryImages[1]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[2]?.url}
           alt={GalleryImages[2]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[3]?.url}
           alt={GalleryImages[3]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[4]?.url}
           alt={GalleryImages[4]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[5]?.url}
           alt={GalleryImages[5]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[6]?.url}
           alt={GalleryImages[6]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[8]?.url}
           alt={GalleryImages[8]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[9]?.url}
           alt={GalleryImages[9]?.desc}
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
+          className={SmallBoxClass}
         />
         <img
           src={GalleryImages[7]?.url}
           alt={GalleryImages[7]?.desc}
-          className="min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105 md:col-start-1 md:row-start-3"
+          className={BigBoxClass + "md:col-start-1 md:row-start-3"}
         />
       </div>
     </section>
