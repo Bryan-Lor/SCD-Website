@@ -1,3 +1,5 @@
+import { GalleryImages } from "~/data/GalleryImages";
+
 const Gallery: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
   return (
     <section
@@ -13,54 +15,54 @@ const Gallery: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
       <h3 className="sr-only">Photo Gallery</h3>
       <div className="container mx-auto grid grid-cols-2 gap-4 p-4 md:grid-cols-4">
         <img
-          src="https://source.unsplash.com/random/301x301/"
-          alt=""
-          className="min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded  bg-gray-500 shadow-sm transition duration-500 ease-in-out hover:scale-105 md:col-start-3 md:row-start-1"
+          src={GalleryImages[0]?.url}
+          alt={GalleryImages[0]?.desc}
+          className="min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105 md:col-start-3 md:row-start-1"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded  bg-gray-500 shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?0"
+          src={GalleryImages[1]?.url}
+          alt={GalleryImages[1]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded  bg-gray-500 shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?1"
+          src={GalleryImages[2]?.url}
+          alt={GalleryImages[2]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500  shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?2"
+          src={GalleryImages[3]?.url}
+          alt={GalleryImages[3]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500  shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?3"
+          src={GalleryImages[4]?.url}
+          alt={GalleryImages[4]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500  shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?4"
+          src={GalleryImages[5]?.url}
+          alt={GalleryImages[5]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500  shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?5"
+          src={GalleryImages[6]?.url}
+          alt={GalleryImages[6]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500  shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?6"
+          src={GalleryImages[8]?.url}
+          alt={GalleryImages[8]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          alt=""
-          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500  shadow-sm  transition duration-500 ease-in-out hover:scale-105"
-          src="https://source.unsplash.com/random/200x200/?7"
+          src={GalleryImages[9]?.url}
+          alt={GalleryImages[9]?.desc}
+          className="min-h-48 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105"
         />
         <img
-          src="https://source.unsplash.com/random/302x302/"
-          alt=""
-          className="min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded bg-gray-500 shadow-sm transition duration-500 ease-in-out hover:scale-105 md:col-start-1 md:row-start-3"
+          src={GalleryImages[7]?.url}
+          alt={GalleryImages[7]?.desc}
+          className="min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded bg-gray-500 object-cover object-center shadow-sm transition duration-500 ease-in-out hover:scale-105 md:col-start-1 md:row-start-3"
         />
       </div>
     </section>
