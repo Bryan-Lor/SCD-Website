@@ -6,6 +6,7 @@ import Hero from "~/components/Hero";
 import Footer from "~/components/Footer";
 import Gallery from "~/components/Gallery";
 import Team from "~/components/Team";
+import EventPreview from "~/components/EventPreview";
 
 const Home: NextPage = () => {
   const { darkTheme } = useSettingsContext();
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
           <Hero darkTheme={darkTheme} imgSrc="SCDLanding.webp" />
         </div>
         <Team darkTheme={darkTheme} />
+        <EventPreview />
         <Gallery darkTheme={darkTheme} />
         <Footer />
       </main>
