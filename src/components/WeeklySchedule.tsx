@@ -1,6 +1,3 @@
-import { eventNames } from "process";
-import { useEffect } from "react";
-
 const WeeklySchedule: React.FC = () => {
   const curr: Date = new Date();
   const currDate: number = curr.getDate();
@@ -106,16 +103,5 @@ const EventPing: React.FC<{ color: string; colorBright: string }> = ({
         className={"relative inline-flex h-3 w-3 rounded-full " + color}
       ></span>
     </span>
-    // <span className="absolute -top-1 -right-1 flex h-3 w-3">
-    //   <span
-    //     className={
-    //       "absolute inline-flex h-full w-full animate-ping rounded-full opacity-0 group-hover:opacity-75 " +
-    //       { colorBright }
-    //     }
-    //   ></span>
-    //   <span
-    //     className={"relative inline-flex h-3 w-3 rounded-full " + { color }}
-    //   ></span>
-    // </span>
   );
 };
