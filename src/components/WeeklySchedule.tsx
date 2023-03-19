@@ -1,7 +1,7 @@
 const WeeklySchedule: React.FC = () => {
   const curr: Date = new Date();
   const currDate: number = curr.getDate();
-  const eventDates: string[] = ["Mon", "Thu", "Fri"];
+  const eventDates: string[] = ["Mon", "Fri"];
   const weekDays: string[] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const week: number[] = [];
 
@@ -20,18 +20,10 @@ const WeeklySchedule: React.FC = () => {
             isCurrentDate={currDate === week[index]}
             isEventDate={eventDates.includes(dateName)}
             eventColor={
-              dateName === eventDates[0]
-                ? "bg-yellow-500"
-                : dateName === eventDates[1]
-                ? "bg-purple-500"
-                : "bg-red-500"
+              dateName === eventDates[0] ? "bg-yellow-500" : "bg-red-500"
             }
             eventBrightColor={
-              dateName === eventDates[0]
-                ? "bg-yellow-300"
-                : dateName === eventDates[1]
-                ? "bg-purple-300"
-                : "bg-red-300"
+              dateName === eventDates[0] ? "bg-yellow-300" : "bg-red-500"
             }
             dateName={dateName}
             dateNum={week[index]}
@@ -61,31 +53,35 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16  cursor-pointer justify-center rounded-md transition-all duration-300 md:hover:bg-[#EEFFEB] md:hover:shadow-lg";
-  const eventDateClass =
-    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-md outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
+    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer justify-center rounded-md transition-all duration-300 md:hover:bg-[#deffd9] md:hover:shadow-lg";
   const currentDateClass =
     "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-md bg-[#9BF788] shadow-lg ";
 
   return (
-    <div
-      className={
-        isCurrentDate
-          ? currentDateClass
-          : isEventDate
-          ? eventDateClass
-          : dateClass
-      }
-    >
+    <div className={isCurrentDate ? currentDateClass : dateClass}>
       {isEventDate ? (
         <EventPing color={eventColor} colorBright={eventBrightColor} />
       ) : null}
-      <div className="flex items-center px-2 py-2 sm:px-2 sm:py-2 md:px-4 md:py-4">
+      <div
+        className={
+          "flex items-center px-2 py-2 sm:px-2 sm:py-2 md:px-4 md:py-4 "
+        }
+      >
         <div className="text-center">
-          <p className="text-sm text-gray-300 mix-blend-difference transition-all duration-300">
+          <p
+            className={
+              "text-sm transition-all duration-300 md:group-hover:text-black " +
+              (isEventDate || isCurrentDate ? "text-black" : "text-gray-500")
+            }
+          >
             {dateName}
           </p>
-          <p className="mt-3 text-gray-300 mix-blend-difference transition-all duration-300 md:group-hover:font-bold">
+          <p
+            className={
+              "mt-3 transition-all duration-300 md:group-hover:font-bold md:group-hover:text-black " +
+              (isEventDate || isCurrentDate ? "text-black" : "text-gray-500")
+            }
+          >
             {dateNum}
           </p>
         </div>

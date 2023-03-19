@@ -8,7 +8,7 @@ import Gallery from "~/components/Gallery";
 import Team from "~/components/Team";
 import EventPreview from "~/components/EventPreview";
 
-const Home: NextPage = () => {
+const Events: NextPage = () => {
   const { darkTheme } = useSettingsContext();
 
   return (
@@ -18,16 +18,12 @@ const Home: NextPage = () => {
         <div
           className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
         >
-          <Nav />
-          <Hero />
+          TEST
         </div>
-        <Team darkTheme={darkTheme} />
-        <EventPreview />
-        <Gallery darkTheme={darkTheme} />
       </main>
       <Footer />
     </>
   );
 };
 
-export default Home;
+export default Events;

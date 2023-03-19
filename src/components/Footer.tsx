@@ -1,10 +1,12 @@
 import Link from "next/link";
 import SocialMediaLinks from "./SocialMediaLinks";
 import { Links } from "~/data/Links";
+import NavLinks from "./NavLinks";
 
 const Footer: React.FC = () => {
+  const linkClass = "transition hover:text-gray-400 text-xl lg:text-lg";
   return (
-    <footer aria-label="Site Footer" className={"m-0 w-full bg-heroDark p-0"}>
+    <footer aria-label="Site Footer" className="m-0 w-full bg-heroDark p-0">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:flex lg:max-w-screen-2xl lg:justify-between lg:py-12 lg:px-8">
         <div>
           <div className="flex justify-center">
@@ -33,35 +35,7 @@ const Footer: React.FC = () => {
         <div>
           <nav aria-label="Footer Nav" className="mt-12 lg:mt-3">
             <ul className="text-difference flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12 ">
-              <li>
-                <Link className="transition hover:text-gray-400" href="/">
-                  Events
-                </Link>
-              </li>
-
-              <li>
-                <Link className=" transition hover:text-gray-400" href="/">
-                  Recordings
-                </Link>
-              </li>
-
-              <li>
-                <Link className="transition hover:text-gray-400" href="/">
-                  History
-                </Link>
-              </li>
-
-              <li>
-                <Link className="transition hover:text-gray-400" href="/">
-                  Donate
-                </Link>
-              </li>
-
-              <li>
-                <Link className="transition hover:text-gray-400" href="/">
-                  Contact Us
-                </Link>
-              </li>
+              <NavLinks className={linkClass} />
             </ul>
           </nav>
 

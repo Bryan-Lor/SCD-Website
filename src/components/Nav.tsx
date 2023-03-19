@@ -2,9 +2,16 @@ import Link from "next/link";
 import { useSettingsContext } from "~/data/ThemeContext";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
+import NavLinks from "./NavLinks";
 
 const Nav: React.FC = () => {
   const { darkTheme, setDarkTheme } = useSettingsContext();
+
+  const linkClass =
+    "transition " +
+    (darkTheme
+      ? "text-difference hover:text-gray-400"
+      : "mix-blend-normal hover:text-white");
 
   return (
     <>
@@ -37,47 +44,7 @@ const Nav: React.FC = () => {
                       {darkTheme ? <FaToggleOn /> : <FaToggleOff />}
                     </button>
                   </li>
-                  <li>
-                    <Link
-                      className={
-                        "transition " +
-                        (darkTheme
-                          ? "text-difference hover:text-gray-400"
-                          : "mix-blend-normal hover:text-white")
-                      }
-                      href="/"
-                    >
-                      Events
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className={
-                        "transition " +
-                        (darkTheme
-                          ? "text-difference hover:text-gray-400"
-                          : "mix-blend-normal hover:text-white")
-                      }
-                      href="/"
-                    >
-                      Recordings
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className={
-                        "transition " +
-                        (darkTheme
-                          ? "text-difference hover:text-gray-400"
-                          : "mix-blend-normal hover:text-white")
-                      }
-                      href="/"
-                    >
-                      Donate
-                    </Link>
-                  </li>
+                  <NavLinks className={linkClass} includeContactUs={false} />
                 </ul>
               </nav>
 
