@@ -6,18 +6,7 @@ const EventPreview: React.FC = () => {
     <section
       className={
         "mx-auto flex items-center justify-center align-middle " + "bg-white "
-        // (darkTheme ? "bg-heroDark" : "bg-hero")
-        // (darkTheme ? "bg-white" : "bg-gray-900")
       }
-      // style={
-      //   !darkTheme
-      //     ? {
-      //         background: "linear-gradient(150deg, #1f1f1f, #000000)",
-      //       }
-      //     : {
-      //         background: "linear-gradient(150deg, #f2f2f2, #ffffff)",
-      //       }
-      // }
       style={{
         background: "linear-gradient(150deg, #f2f2f2, #ffffff)",
       }}
@@ -30,7 +19,7 @@ const EventPreview: React.FC = () => {
             Participate in engaging activities, including project showcases,
             coding practice, and industry speaker sessions. We also offer
             skill-building workshops, hackathons, and social events to keep
-            things exciting. Don't miss the chance to meet like-minded
+            things exciting. Don&#39;t miss the chance to meet like-minded
             individuals, learn new skills, and have fun!
           </p>
           <button className="justify center my-4 inline-flex w-full items-center bg-white py-2 px-6 text-center align-middle mix-blend-difference duration-700 lg:w-96 lg:hover:w-full">

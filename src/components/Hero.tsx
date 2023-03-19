@@ -39,8 +39,8 @@ const Hero: React.FC = () => {
             </h2>
           </Link>
           <p className="text-difference pb-6">
-            Founded in Fall 2021 as Wayne State<span>&#39;</span>s sole Computer
-            Science organization, SCD is
+            Founded in Fall 2021 as Wayne State&#39;s sole Computer Science
+            organization, SCD is
             <b className="font-semibold">
               {" "}
               dedicated to creating opportunities{" "}
