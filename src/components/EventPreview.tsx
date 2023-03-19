@@ -17,16 +17,17 @@ const EventPreview: React.FC<{ darkTheme: boolean }> = ({
           <h3 className="">Join Our Events</h3>
           <hr className="pb-2" />
           <p className="">
-            Join our weekly coding and game nights to engage with like-minded
-            individuals, sharpen your skills, and have fun! Don't miss out on
-            other opportunities to grow your network and participate in our
-            community.
+            Participate in engaging activities, including project showcases,
+            coding practice, and industry speaker sessions. We also offer
+            skill-building workshops, hackathons, and social events to keep
+            things exciting. Don't miss the chance to meet like-minded
+            individuals, learn new skills, and have fun!
           </p>
-          <button className="justify center mb-8 mt-4 inline-flex w-full items-center bg-white py-2 px-6 text-center align-middle mix-blend-difference lg:w-96">
+          <button className="justify center my-4 inline-flex w-full items-center bg-white py-2 px-6 text-center align-middle mix-blend-difference lg:w-96">
             <p className="flex-1 text-xl">View More</p>
             <MdOutlineArrowRightAlt className="text-3xl" />
           </button>
-          <div className="flex flex-col lg:flex-row lg:gap-4">
+          <div className="flex flex-col lg:mb-2 lg:flex-row lg:gap-4">
             <p>
               <EventPing
                 className={"px-2"}
