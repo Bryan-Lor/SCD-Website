@@ -4,7 +4,7 @@ import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import NavLinks from "./NavLinks";
 
-const Nav: React.FC = () => {
+const Nav: React.FC<{ className?: string }> = ({ className }) => {
   const { darkTheme, setDarkTheme } = useSettingsContext();
 
   const linkClass =
@@ -15,7 +15,7 @@ const Nav: React.FC = () => {
 
   return (
     <>
-      <nav>
+      <nav className={className}>
         <header
           aria-label="Site Header"
           className="relative mx-auto w-full px-4 sm:max-w-screen-sm sm:px-6 md:max-w-screen-md lg:max-w-screen-xl lg:px-8"

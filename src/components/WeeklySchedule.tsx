@@ -13,7 +13,7 @@ const WeeklySchedule: React.FC = () => {
 
   return (
     <>
-      <div className="mx-auto flex justify-start py-4 px-2 sm:max-w-screen-sm md:mx-12 md:max-w-screen-md md:justify-center lg:max-w-screen-xl">
+      <div className="mx-auto flex max-w-screen-sm justify-start py-4 px-2 md:mx-12 md:max-w-screen-md md:justify-center lg:max-w-screen-xl">
         {weekDays.map((dateName: string, index: number) => (
           <CalendarDate
             key={index}

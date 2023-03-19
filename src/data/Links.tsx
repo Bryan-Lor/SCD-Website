@@ -10,3 +10,7 @@ export const Links = {
   wayne: "https://engineering.wayne.edu/",
   githubPage: "https://github.com/Bryan-Lor/SCD-Website",
 };
+
+export const PageLinks = {
+  events: "events",
+};

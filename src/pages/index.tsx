@@ -14,17 +14,17 @@ const Home: NextPage = () => {
   return (
     <>
       <HeaderTag />
-      <main className="h-full w-full">
-        <div
-          className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
-        >
-          <Nav />
+      <div
+        className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
+      >
+        <Nav />
+        <main>
           <Hero />
-        </div>
-        <Team darkTheme={darkTheme} />
-        <EventPreview />
-        <Gallery darkTheme={darkTheme} />
-      </main>
+          <Team darkTheme={darkTheme} />
+          <EventPreview />
+          <Gallery darkTheme={darkTheme} />
+        </main>
+      </div>
       <Footer />
     </>
   );
