@@ -61,11 +61,11 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16  cursor-pointer justify-center rounded-lg transition-all duration-300 md:hover:bg-[#EEFFEB] md:hover:shadow-lg";
+    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16  cursor-pointer justify-center rounded-md transition-all duration-300 md:hover:bg-[#EEFFEB] md:hover:shadow-lg";
   const eventDateClass =
-    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-lg outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
+    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-md outline outline-1 outline-gray-200 bg-[#CBFFC0] shadow-lg";
   const currentDateClass =
-    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-lg bg-[#9BF788] shadow-lg ";
+    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-md bg-[#9BF788] shadow-lg ";
 
   return (
     <div
