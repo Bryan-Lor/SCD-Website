@@ -23,15 +23,15 @@ const WeeklySchedule: React.FC = () => {
               dateName === eventDates[0]
                 ? "bg-yellow-500"
                 : dateName === eventDates[1]
-                ? "bg-red-500"
-                : "bg-purple-500"
+                ? "bg-purple-500"
+                : "bg-red-500"
             }
             eventBrightColor={
               dateName === eventDates[0]
                 ? "bg-yellow-300"
                 : dateName === eventDates[1]
-                ? "bg-red-300"
-                : "bg-purple-300"
+                ? "bg-purple-300"
+                : "bg-red-300"
             }
             dateName={dateName}
             dateNum={week[index]}
@@ -95,16 +95,23 @@ const CalendarDate: React.FC<{
 };
 
 // Calendar Event Ping Element --------------------------------------------
-const EventPing: React.FC<{ color: string; colorBright: string }> = ({
-  color,
-  colorBright,
-}) => {
+export const EventPing: React.FC<{
+  className?: string;
+  color: string;
+  colorBright: string;
+}> = ({ className, color, colorBright }) => {
   return (
-    <span className="absolute -top-1 -right-1 flex h-3 w-3">
+    <span
+      className={
+        className ? className : "absolute -top-1 -right-1 flex h-3 w-3"
+      }
+    >
       <span
         className={
-          "absolute inline-flex h-full w-full animate-ping rounded-full opacity-0 md:group-hover:opacity-75 " +
-          colorBright
+          className
+            ? ""
+            : "absolute inline-flex h-full w-full animate-ping rounded-full opacity-0 md:group-hover:opacity-75 " +
+              colorBright
         }
       ></span>
       <span

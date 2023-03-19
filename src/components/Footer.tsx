@@ -5,7 +5,7 @@ import { Links } from "~/data/Links";
 const Footer: React.FC = () => {
   return (
     <footer aria-label="Site Footer" className={"m-0 w-full bg-heroDark p-0"}>
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:flex lg:max-w-screen-2xl lg:justify-between lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:flex lg:max-w-screen-2xl lg:justify-between lg:py-12 lg:px-8">
         <div>
           <div className="flex justify-center">
             <Link href={Links.scd} target="_blank">
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div>
-          <nav aria-label="Footer Nav" className="mt-12">
+          <nav aria-label="Footer Nav" className="mt-12 lg:mt-3">
             <ul className="text-difference flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12 ">
               <li>
                 <Link className="transition hover:text-gray-400" href="/">
