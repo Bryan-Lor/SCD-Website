@@ -26,7 +26,7 @@ const EventPreview: React.FC = () => {
             <p className="flex-1 text-xl">View More</p>
             <MdOutlineArrowRightAlt className="text-3xl" />
           </button>
-          <div className="flex flex-col lg:mb-2 lg:flex-row lg:gap-4">
+          <div className="pointer-events-none flex flex-col lg:mb-2 lg:flex-row lg:gap-4">
             <p>
               <EventPing
                 className={"px-2"}
