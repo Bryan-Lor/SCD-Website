@@ -1,3 +1,4 @@
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 import WeeklySchedule from "./WeeklySchedule";
 
 const EventPreview: React.FC<{ darkTheme: boolean }> = ({
@@ -20,7 +21,10 @@ const EventPreview: React.FC<{ darkTheme: boolean }> = ({
           duis ultricies lacus sed turpis tincidunt. Dignissim convallis aenean
           et tortor at risus viverra.
         </p>
-        <button className="py-2 pb-2 sm:pb-2 md:pb-8">View More</button>
+        <button className="justify center my-4 inline-flex w-96 items-center bg-white py-2 text-center align-middle mix-blend-difference sm:mb-2 md:mb-8">
+          <p className="flex-1 text-xl">View More</p>
+          <MdOutlineArrowRightAlt className="mx-6 text-3xl" />
+        </button>
       </div>
       <WeeklySchedule />
       {/* </div> */}

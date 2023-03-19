@@ -23,7 +23,7 @@ const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
         objectFit: "contain",
       }}
     >
-      <h3 className="relative z-[1] py-6 text-center text-xl uppercase text-white">
+      <h3 className="relative z-[1] py-6 text-center text-gray-300">
         Meet our team
         <hr className="mx-auto w-[15rem] max-sm:w-[11.75rem]" />
       </h3>
