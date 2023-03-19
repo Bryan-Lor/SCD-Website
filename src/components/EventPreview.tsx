@@ -1,9 +1,7 @@
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import WeeklySchedule, { EventPing } from "./WeeklySchedule";
 
-const EventPreview: React.FC<{ darkTheme: boolean }> = ({
-  darkTheme = true,
-}) => {
+const EventPreview: React.FC = () => {
   return (
     <section
       className={
@@ -11,6 +9,18 @@ const EventPreview: React.FC<{ darkTheme: boolean }> = ({
         // (darkTheme ? "bg-heroDark" : "bg-hero")
         // (darkTheme ? "bg-white" : "bg-gray-900")
       }
+      // style={
+      //   !darkTheme
+      //     ? {
+      //         background: "linear-gradient(150deg, #1f1f1f, #000000)",
+      //       }
+      //     : {
+      //         background: "linear-gradient(150deg, #f2f2f2, #ffffff)",
+      //       }
+      // }
+      style={{
+        background: "linear-gradient(150deg, #f2f2f2, #ffffff)",
+      }}
     >
       <div className="mx-auto flex flex-col justify-start py-8 px-8 sm:max-w-screen-sm md:mx-12 md:max-w-screen-md md:justify-center md:py-4 md:px-2 lg:max-w-screen-xl lg:flex-row-reverse">
         <div>
@@ -23,7 +33,7 @@ const EventPreview: React.FC<{ darkTheme: boolean }> = ({
             things exciting. Don't miss the chance to meet like-minded
             individuals, learn new skills, and have fun!
           </p>
-          <button className="justify center my-4 inline-flex w-full items-center bg-white py-2 px-6 text-center align-middle mix-blend-difference lg:w-96">
+          <button className="justify center my-4 inline-flex w-full items-center bg-white py-2 px-6 text-center align-middle mix-blend-difference duration-700 lg:w-96 lg:hover:w-full">
             <p className="flex-1 text-xl">View More</p>
             <MdOutlineArrowRightAlt className="text-3xl" />
           </button>
