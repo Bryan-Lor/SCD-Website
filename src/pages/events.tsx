@@ -10,13 +10,15 @@ const Events: NextPage = () => {
   return (
     <>
       <HeaderTag />
-      <div className={darkTheme ? "bg-heroDark" : "bg-hero"}>
+      <div
+        className={"min-h-screen " + (darkTheme ? "bg-heroDark" : "bg-hero")}
+      >
         <Nav />
-        <main className="flex h-full w-full items-center justify-center align-middle">
+        <main className="flex h-full w-full justify-center align-middle">
           <div className="flex max-w-screen-sm flex-col gap-6 overflow-y-auto py-4 px-6 md:max-w-screen-md lg:max-w-screen-xl lg:px-6">
-            <div className="flex flex-col items-center justify-center align-middle text-white">
+            <div className="text-difference flex flex-col items-center justify-center align-middle">
               <h2 className="text-4xl">Upcoming Events</h2>
-              <hr className="w-72" />
+              <div className="h-0.5 w-72 bg-white" />
             </div>
             <EventCard />
             <EventCard />
@@ -32,12 +34,12 @@ export default Events;
 
 const EventCard: React.FC = () => {
   return (
-    <div className="flex w-full">
-      <div className="flex w-2/12 flex-col items-center justify-center rounded-l-md bg-blue-600 p-8 text-center align-middle text-white">
+    <div className="flex w-full flex-col overflow-hidden rounded-md md:flex-row">
+      <div className="flex w-full flex-col items-center justify-center bg-blue-600 p-8 text-center align-middle text-white md:w-2/12">
         <p className="text-2xl font-bold">24</p>
         <p>Sept</p>
       </div>
-      <div className="flex flex-1 flex-col rounded-r-md bg-white p-4">
+      <div className="flex flex-1 flex-col bg-white p-4">
         <div className="text-black">
           <h2>SCD Game Night</h2>
           <hr />
@@ -51,7 +53,7 @@ const EventCard: React.FC = () => {
           </p>
         </div>
         <div className="text-right">
-          <button className="rounded bg-black py-2 px-8 text-base text-white">
+          <button className="rounded bg-yellowGrad py-2 px-8 text-base text-white">
             RSVP
           </button>
         </div>

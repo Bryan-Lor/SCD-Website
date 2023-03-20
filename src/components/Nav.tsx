@@ -11,7 +11,7 @@ const Nav: React.FC = () => {
     "transition " +
     (darkTheme
       ? "text-difference hover:text-gray-400"
-      : "mix-blend-normal hover:text-white");
+      : "mix-blend-normal hover:text-gray-600");
 
   return (
     <>
@@ -54,7 +54,7 @@ const Nav: React.FC = () => {
                         "rounded-md px-5 py-2.5 text-sm font-medium outline outline-1 transition " +
                         (darkTheme
                           ? "text-difference hover:text-gray-400"
-                          : "mix-blend-normal hover:text-white")
+                          : "mix-blend-normal hover:text-gray-600")
                       }
                       href="/"
                     >

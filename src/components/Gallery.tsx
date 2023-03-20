@@ -8,11 +8,11 @@ const Gallery: React.FC = () => {
   return (
     <section
       className={"py-16"}
-      style={{
-        background:
-          "linear-gradient(to bottom, #b5bdc8 0%,#828c95 36%,#28343b 100%)",
-        // "linear-gradient(180deg, rgba(30,30,36,1) 0%, rgba(27,40,28,1) 49%, rgba(50,68,46,1) 100%)",
-      }}
+      // style={{
+      //   background:
+      //     "linear-gradient(to bottom, #b5bdc8 0%,#828c95 36%,#28343b 100%)",
+      //   // "linear-gradient(180deg, rgba(30,30,36,1) 0%, rgba(27,40,28,1) 49%, rgba(50,68,46,1) 100%)",
+      // }}
     >
       <h3 className="sr-only">Photo Gallery</h3>
       <div className="mx-auto grid max-w-screen-sm grid-cols-2 gap-4 p-4 md:max-w-screen-md md:grid-cols-4 lg:max-w-screen-xl lg:px-4">
