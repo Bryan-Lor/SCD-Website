@@ -14,9 +14,7 @@ const Home: NextPage = () => {
   return (
     <>
       <HeaderTag />
-      <div
-        className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
-      >
+      <div className={darkTheme ? "bg-heroDark" : "bg-hero"}>
         <Nav />
         <main>
           <Hero />

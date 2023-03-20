@@ -10,9 +10,7 @@ const Events: NextPage = () => {
   return (
     <>
       <HeaderTag />
-      <div
-        className={"h-full w-full " + (darkTheme ? "bg-heroDark" : "bg-hero")}
-      >
+      <div className={darkTheme ? "bg-heroDark" : "bg-hero"}>
         <Nav />
         <main className="flex h-full w-full items-center justify-center align-middle">
           <div className="flex max-w-screen-sm flex-col gap-6 overflow-y-auto py-4 px-6 md:max-w-screen-md lg:max-w-screen-xl lg:px-6">
