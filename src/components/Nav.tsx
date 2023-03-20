@@ -65,8 +65,8 @@ const Nav: React.FC = () => {
               </nav>
 
               {/* Hambuger Menu */}
-              <div className="block md:hidden">
-                {/* <div className="fixed top-2 right-5 z-50 block md:hidden"> */}
+              {/* <div className="block md:hidden"> */}
+              <div className="fixed top-2 right-5 z-50 block md:hidden">
                 <button className="rounded bg-gray-100 p-2 text-gray-600 mix-blend-difference shadow-md transition hover:text-gray-600/75">
                   <MdMenu />
                 </button>
