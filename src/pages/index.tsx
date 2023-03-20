@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           <EventPreview />
           <Gallery />
         </main>
-        <Footer />
+        <Footer className="bg-heroDark" />
       </div>
     </>
   );

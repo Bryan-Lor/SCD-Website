@@ -3,10 +3,10 @@ import SocialMediaLinks from "./SocialMediaLinks";
 import { Links } from "~/data/Links";
 import NavLinks from "./NavLinks";
 
-const Footer: React.FC = () => {
+const Footer: React.FC<{ className?: string }> = ({ className }) => {
   const linkClass = "transition hover:text-gray-400 text-xl lg:text-lg";
   return (
-    <footer aria-label="Site Footer" className="m-0 w-full bg-heroDark p-0">
+    <footer aria-label="Site Footer" className={"m-0 w-full p-0 " + className}>
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:flex lg:max-w-screen-2xl lg:justify-between lg:py-12 lg:px-8">
         <div>
           <div className="flex justify-center">

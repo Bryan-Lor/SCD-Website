@@ -29,11 +29,8 @@
     @apply text-base;
   }
   body {
-    @apply m-0 scroll-smooth bg-black p-0 text-2xl;
+    @apply m-0 w-screen overflow-x-hidden scroll-smooth bg-black p-0;
     font-family: "Noto Sans", "sans-serif";
-  }
-  #__next {
-    @apply flex flex-col items-center justify-center align-middle;
   }
   .text-difference {
     @apply text-white mix-blend-difference;
