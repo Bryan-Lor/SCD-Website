@@ -22,10 +22,10 @@ const Home: NextPage = () => {
           <Hero />
           <Team darkTheme={darkTheme} />
           <EventPreview />
-          <Gallery darkTheme={darkTheme} />
+          <Gallery />
         </main>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

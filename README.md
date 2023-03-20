@@ -5,4 +5,4 @@ The redesigned website for the Society of Computer Developers, completely reimag
 <!-- Rebuilt from the ground up using Next.js and Tailwind CSS, this is a modernized website for the SCD club at Wayne State University. -->
 
 <!-- Using https://pikwy.com/ to capture screenshot and host image -->
-<img src="https://api.pikwy.com/web/6413fef65cb8065b45002437.jpg" />
+<img src="https://pikwy.com/web/64179d647e33a67ab14172b6" />

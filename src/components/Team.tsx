@@ -55,11 +55,12 @@ const Team: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
           darkTheme
             ? {
                 background:
-                  "linear-gradient(180deg, #2f2f2f 0%, #646464 11.98%, rgba(255, 255, 255, 0) 42.19%",
+                  "linear-gradient(180deg, #4D4D4D 0%, rgba(109, 109, 109, 0.875) 11.46%, rgba(255, 255, 255, 0) 62.5%)",
+                // "linear-gradient(180deg, #2f2f2f 0%, #646464 11.98%, rgba(255, 255, 255, 0) 42.19%",
               }
             : {
                 background:
-                  "linear-gradient(180deg, #FFFFFF 0%, #CDCDCD 24.48%, rgba(255, 255, 255, 0) 62.5%)",
+                  "linear-gradient(180deg, #808080 0%, rgba(147, 147, 147, 0.85) 19.27%, rgba(255, 255, 255, 0) 62.5%)",
               }
         }
       />

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { PageLinks } from "~/data/Links";
 import WeeklySchedule, { EventPing } from "./WeeklySchedule";
 
 const EventPreview: React.FC = () => {
@@ -22,10 +24,13 @@ const EventPreview: React.FC = () => {
             things exciting. Don&#39;t miss the chance to meet like-minded
             individuals, learn new skills, and have fun!
           </p>
-          <button className="justify center my-4 inline-flex w-full items-center bg-white py-2 px-6 text-center align-middle mix-blend-difference duration-700 lg:w-96 lg:hover:w-full">
+          <Link
+            href={PageLinks.events}
+            className="justify center my-4 inline-flex w-full items-center bg-white py-2 px-6 text-center align-middle mix-blend-difference duration-700 lg:w-96 lg:hover:w-full"
+          >
             <p className="flex-1 text-xl">View More</p>
             <MdOutlineArrowRightAlt className="text-3xl" />
-          </button>
+          </Link>
           <div className="pointer-events-none flex flex-col lg:mb-2 lg:flex-row lg:gap-4">
             <p>
               <EventPing

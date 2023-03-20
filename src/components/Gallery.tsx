@@ -1,13 +1,13 @@
 import { GalleryImages } from "~/data/GalleryImages";
 
-const Gallery: React.FC<{ darkTheme?: boolean }> = ({ darkTheme }) => {
+const Gallery: React.FC = () => {
   const BigBoxClass =
     "min-h-96 col-span-2 row-span-2 aspect-square h-full w-full rounded-[0.2rem] bg-gray-500 object-cover object-center shadow-sm md:transition md:duration-500 md:ease-in-out md:hover:scale-105 ";
   const SmallBoxClass =
     "min-h-48 aspect-square h-full w-full rounded-[0.2rem] bg-gray-500 object-cover object-center shadow-sm md:transition md:duration-500 md:ease-in-out md:hover:scale-105";
   return (
     <section
-      className={"py-16 " + (darkTheme ? "bg-heroDark" : "bg-hero")}
+      className={"py-16"}
       style={{
         background:
           "linear-gradient(to bottom, #b5bdc8 0%,#828c95 36%,#28343b 100%)",
