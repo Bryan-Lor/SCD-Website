@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           <EventPreview />
           <Gallery />
         </main>
-        <Footer className="bg-heroDark" />
+        <Footer className="mx-auto lg:max-w-screen-xl" />
       </div>
     </>
   );

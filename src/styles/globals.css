@@ -28,13 +28,11 @@
   p {
     @apply text-base;
   }
+  html,
   body {
-    @apply absolute m-0 w-screen overflow-x-hidden scroll-smooth bg-black p-0;
+    @apply m-0 w-screen overflow-x-hidden scroll-smooth bg-black p-0;
     font-family: "Noto Sans", "sans-serif";
   }
-  /* #__next {
-    @apply absolute h-full w-screen;
-  } */
   .text-difference {
     @apply text-white mix-blend-difference;
   }
