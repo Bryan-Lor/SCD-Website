@@ -7,13 +7,15 @@ import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const [darkTheme, setDarkTheme] = useState<boolean>(true);
-  // const [events, setEvents] = useState<{ [key: string]: any }[]>([]);
-  const [events, setEvents] = useState<EventType[]>([]);
+  const [events, setEvents] = useState<{ [key: string]: any }[]>([]);
+  // const [events, setEvents] = useState<EventType[]>([]);
 
   useEffect(() => {
     async function fetchEvents() {
-      // const feed = await new Parser<{ [key: string]: any }[]>().parseURL(
-      const feed = await new Parser<EventType[]>().parseURL(rssUrl);
+      const feed = await new Parser<{ [key: string]: any }[]>().parseURL(
+        rssUrl
+      );
+      // const feed = await new Parser<EventType[]>().parseURL(rssUrl);
       if (feed.items.length > 0) {
         const mappedEvents: EventType[] = feed.items.map((item) => ({
           author: item.author,
@@ -33,6 +35,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     }
     fetchEvents();
   }, []);
+
+  console.log("events: ", events);
 
   return (
     <EventsContext.Provider value={events}>

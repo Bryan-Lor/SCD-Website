@@ -27,13 +27,9 @@ const Events: NextPage = () => {
               <div className="h-0.5 w-72 bg-white" />
             </div>
             {events.length > 0 ? (
-              events.map((event: object, index: number) => (
+              events.map((event, index) => (
                 <EventCard
                   key={index}
-                  // title={event.title}
-                  // desc={event.contentSnippet}
-                  // link={event.link}
-                  // image={event.enclosure.url}
                   title={event.title}
                   desc={event.contentSnippet}
                   link={event.link}
