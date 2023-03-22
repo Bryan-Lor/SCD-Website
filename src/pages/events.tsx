@@ -30,10 +30,14 @@ const Events: NextPage = () => {
               events.map((event: object, index: number) => (
                 <EventCard
                   key={index}
-                  title={event.title}
-                  desc={event.contentSnippet}
-                  link={event.link}
-                  image={event.enclosure.url}
+                  // title={event.title}
+                  // desc={event.contentSnippet}
+                  // link={event.link}
+                  // image={event.enclosure.url}
+                  title={event["title"]}
+                  desc={event["contentSnippet"]}
+                  link={event["link"]}
+                  image={event["enclosure.url"]}
                 />
               ))
             ) : (
