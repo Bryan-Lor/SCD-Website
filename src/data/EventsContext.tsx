@@ -29,7 +29,7 @@ export const rssUrl =
   "https://getinvolved.wayne.edu/organization/scd/events.rss";
 // export const rssUrl = "https://getinvolved.wayne.edu/organization/student-senate/events.rss"
 
-export const EventsContext = createContext<{ [key: string]: any }[]>([]);
-// export const EventsContext = createContext<EventType[]>([]);
+// export const EventsContext = createContext<{ [key: string]: any }[]>([]);
+export const EventsContext = createContext<EventType[]>([]);
 
 export const useEventsContext = () => useContext(EventsContext);
