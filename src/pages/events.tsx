@@ -3,9 +3,24 @@ import { type NextPage } from "next";
 import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
 import Footer from "~/components/Footer";
+import { useEffect, useState } from "react";
+import Parser from "rss-parser";
+import Link from "next/link";
 
 const Events: NextPage = () => {
   const { darkTheme } = useSettingsContext();
+
+  const [events, setEvents] = useState<any[]>([]);
+  useEffect(() => {
+    async function runFetch() {
+      let url = "https://getinvolved.wayne.edu/organization/scd/events.rss";
+      // let url = "https://getinvolved.wayne.edu/organization/student-senate/events.rss"
+      const feed = await new Parser().parseURL(url);
+      if (feed.items.length > 0) setEvents(feed.items);
+      // console.log("FEED:", feed.items);
+    }
+    runFetch();
+  }, []);
 
   return (
     <>
@@ -20,8 +35,19 @@ const Events: NextPage = () => {
               <h2 className="text-4xl">Upcoming Events</h2>
               <div className="h-0.5 w-72 bg-white" />
             </div>
-            <EventCard />
-            <EventCard />
+            {events.length > 0 ? (
+              events.map((event, index) => (
+                <EventCard
+                  key={index}
+                  title={event.title}
+                  desc={event.contentSnippet}
+                  link={event.link}
+                  image={event.enclosure.url}
+                />
+              ))
+            ) : (
+              <p className="text-white">No Upcoming Events.</p>
+            )}
           </div>
         </main>
         <Footer className="mx-auto lg:max-w-screen-xl" />
@@ -32,30 +58,35 @@ const Events: NextPage = () => {
 
 export default Events;
 
-const EventCard: React.FC = () => {
+const EventCard: React.FC<{
+  title: string;
+  desc: string;
+  link: string;
+  image: string;
+}> = ({ title, desc, link, image }) => {
   return (
-    <div className="flex w-full flex-col overflow-hidden rounded-md md:flex-row">
-      <div className="flex w-full flex-col items-center justify-center bg-blue-600 p-8 text-center align-middle text-white md:w-2/12">
-        <p className="text-2xl font-bold">24</p>
-        <p>Sept</p>
+    <div className="flex w-full flex-col overflow-hidden rounded-md lg:flex-row">
+      <div className="flex w-full flex-col items-center justify-center bg-blue-600 text-center align-middle text-white lg:w-2/12">
+        {/* <p className="text-2xl font-bold">24</p>
+        <p>Sept</p> */}
+        <img
+          src={image}
+          className="h-full w-full bg-red-500 object-cover object-center"
+        />
       </div>
       <div className="flex flex-1 flex-col bg-white p-4">
         <div className="text-black">
-          <h2>SCD Game Night</h2>
+          <h2>{title}</h2>
           <hr />
-          <p className="text-base">
-            SCD Game Night Join SCD for game night! We’re hosting a game night
-            on Friday, March 31 from 6-9 PM in the Student Center! Come take a
-            break after class and play some video, board, and table games with
-            us! We will supply some board games, but you are more than welcome
-            to bring your own! BYO Nintendo Switch Controller, if you are able
-            to. Food will be provided, please RSVP so we can plan accordingly
-          </p>
+          <p className="text-base">{desc.replace(title, "")}</p>
         </div>
         <div className="text-right">
-          <button className="rounded bg-yellowGrad py-2 px-8 text-base text-white">
+          <Link
+            href={link}
+            className="rounded bg-yellowGrad py-2 px-8 text-base text-white"
+          >
             RSVP
-          </button>
+          </Link>
         </div>
       </div>
     </div>

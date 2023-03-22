@@ -7,7 +7,7 @@ const Footer: React.FC<{ className?: string; absolute?: boolean }> = ({
   className = "",
   absolute,
 }) => {
-  const linkClass = "transition hover:text-gray-400 text-xl lg:text-lg";
+  const linkClass = "transition lg:hover:text-gray-400 text-xl lg:text-lg";
   return (
     // <footer aria-label="Site Footer" className={"m-0 w-full p-0 " + className}>
     <footer

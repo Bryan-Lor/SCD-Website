@@ -53,9 +53,9 @@ const CalendarDate: React.FC<{
   dateNum,
 }) => {
   const dateClass =
-    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer justify-center rounded-md transition-all duration-300 md:hover:bg-[#deffd9] md:hover:shadow-lg";
+    "relative hover-light-shadow group mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer justify-center rounded-md transition-all duration-300 md:hover:bg-[#C0D3C4] md:hover:shadow-lg";
   const currentDateClass =
-    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-md bg-[#9BF788] shadow-lg ";
+    "light-shadow group relative mx-1 flex w-11 sm:w-12 md:w-16 cursor-pointer content-center justify-center rounded-md bg-[#7CC28B] shadow-lg ";
 
   return (
     <div className={isCurrentDate ? currentDateClass : dateClass}>

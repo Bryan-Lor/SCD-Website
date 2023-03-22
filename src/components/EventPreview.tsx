@@ -46,7 +46,7 @@ const EventPreview: React.FC = () => {
                 color={"bg-red-500"}
                 colorBright={"bg-red-400"}
               />
-              Game Night, Firdays - 6pm EST
+              Game Night, Fridays - 6pm EST
             </p>
           </div>
         </div>

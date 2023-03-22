@@ -19,13 +19,12 @@ const NavLinks: React.FC<{ className: string; includeContactUs?: boolean }> = ({
       </li>
 
       <li>
-        <Link className={className} href="/">
-          History
-        </Link>
-      </li>
-
-      <li>
-        <Link className={className} href="/">
+        <Link
+          className={className}
+          href="donoguide.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Donate
         </Link>
       </li>
