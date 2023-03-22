@@ -34,10 +34,10 @@ const Events: NextPage = () => {
                   // desc={event.contentSnippet}
                   // link={event.link}
                   // image={event.enclosure.url}
-                  title={event["title"]}
-                  desc={event["contentSnippet"]}
-                  link={event["link"]}
-                  image={event["enclosure.url"]}
+                  title={event.title}
+                  desc={event.contentSnippet}
+                  link={event.link}
+                  image={event.enclosure.url}
                 />
               ))
             ) : (
