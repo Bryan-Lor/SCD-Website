@@ -13,7 +13,7 @@ const NavLinks: React.FC<{ className: string; includeContactUs?: boolean }> = ({
       </li>
 
       <li>
-        <Link className={className} href="/">
+        <Link className={className} href="recordings">
           Recordings
         </Link>
       </li>

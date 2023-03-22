@@ -1,10 +1,13 @@
 import { createContext, useContext } from "react";
-export type AppSettings = {
+
+export type ThemeSettings = {
   darkTheme: boolean;
   setDarkTheme: (c: boolean) => void;
 };
-export const UserSettingsContext = createContext<AppSettings>({
+
+export const ThemeContext = createContext<ThemeSettings>({
   darkTheme: true, // set a default value
   setDarkTheme: (darkTheme) => !darkTheme,
 });
-export const useSettingsContext = () => useContext(UserSettingsContext);
+
+export const useThemeContext = () => useContext(ThemeContext);

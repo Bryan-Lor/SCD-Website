@@ -1,4 +1,4 @@
-import { useSettingsContext } from "~/data/ThemeContext";
+import { useThemeContext } from "~/data/ThemeContext";
 import { type NextPage } from "next";
 import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
@@ -9,7 +9,7 @@ import Team from "~/components/Team";
 import EventPreview from "~/components/EventPreview";
 
 const Home: NextPage = () => {
-  const { darkTheme } = useSettingsContext();
+  const { darkTheme } = useThemeContext();
 
   return (
     <>

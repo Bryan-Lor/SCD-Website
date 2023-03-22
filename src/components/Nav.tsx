@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { useSettingsContext } from "~/data/ThemeContext";
+import { useThemeContext } from "~/data/ThemeContext";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import NavLinks from "./NavLinks";
 
 const Nav: React.FC = () => {
-  const { darkTheme, setDarkTheme } = useSettingsContext();
+  const { darkTheme, setDarkTheme } = useThemeContext();
 
   const linkClass =
     "transition " +
