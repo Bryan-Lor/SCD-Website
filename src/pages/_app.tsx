@@ -11,24 +11,28 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   useEffect(() => {
     async function fetchEvents() {
-      const feed = await new Parser<EventType[]>().parseURL(rssUrl);
-      if (feed.items.length > 0) {
-        const mappedEvents: EventType[] = feed.items.map(
-          (item): EventType => ({
-            author: item.author,
-            categories: item.categories,
-            content: item.content,
-            contentSnippet: item.contentSnippet,
-            creator: item.creator,
-            enclosure: item.enclosure,
-            guid: item.guid,
-            isoDate: item.isoDate,
-            link: item.link,
-            pubDate: item.pubDate,
-            title: item.title,
-          })
-        );
-        setEvents(mappedEvents);
+      try {
+        const feed = await new Parser<EventType[]>().parseURL(rssUrl);
+        if (feed.items.length > 0) {
+          const mappedEvents: EventType[] = feed.items.map(
+            (item): EventType => ({
+              // author: item.author,
+              categories: item.categories,
+              content: item.content,
+              contentSnippet: item.contentSnippet,
+              creator: item.creator,
+              enclosure: item.enclosure,
+              guid: item.guid,
+              isoDate: item.isoDate,
+              link: item.link,
+              pubDate: item.pubDate,
+              title: item.title,
+            })
+          );
+          setEvents(mappedEvents);
+        }
+      } catch (error) {
+        console.error("Error fetching events: ", error);
       }
     }
     fetchEvents();

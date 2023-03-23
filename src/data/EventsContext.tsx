@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
 export type EventType = {
-  author: string | undefined;
+  // author: string | undefined;
   categories: string[] | undefined;
   content: string | undefined;
   contentSnippet: string | undefined;
@@ -12,18 +12,6 @@ export type EventType = {
   link: string | undefined;
   pubDate: string | undefined;
   title: string | undefined;
-
-  // author: any;
-  // categories: any;
-  // content: any;
-  // contentSnippet: any;
-  // creator: any;
-  // enclosure: any;
-  // guid: any;
-  // isoDate: any;
-  // link: any;
-  // pubDate: any;
-  // title: any;
 };
 
 export const rssUrl =
