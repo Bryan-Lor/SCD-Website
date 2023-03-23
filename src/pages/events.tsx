@@ -1,5 +1,5 @@
 import { useThemeContext } from "~/data/ThemeContext";
-import { EventType, useEventsContext } from "~/data/EventsContext";
+import { useEventsContext } from "~/data/EventsContext";
 import { type NextPage } from "next";
 import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
@@ -8,8 +8,6 @@ import Link from "next/link";
 
 const Events: NextPage = () => {
   const { darkTheme } = useThemeContext();
-  // const events: EventType[] = useEventsContext();
-  // const events: {title:string, contentSnippet: string[], link: string, enclosure: { url:string}}[] = useEventsContext();
   const events: { [key: string]: any }[] = useEventsContext();
 
   return (
@@ -30,7 +28,6 @@ const Events: NextPage = () => {
             </div>
             {events.length > 0 ? (
               events.map((event, index) => (
-                // events.map({title: string, contentSnippet: string[], link: string, image:string} => (
                 <EventCard
                   key={index}
                   title={event.title}
