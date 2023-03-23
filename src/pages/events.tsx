@@ -60,7 +60,11 @@ const EventCard: React.FC<{
       <div className="flex h-96 w-full flex-col items-center justify-center bg-blue-600 text-center align-middle text-white lg:h-full lg:w-2/12">
         {/* <p className="text-2xl font-bold">24</p>
         <p>Sept</p> */}
-        <img src={image} className="h-full w-full object-cover object-center" />
+        <img
+          src={image}
+          alt={title + " Banner"}
+          className="h-full w-full object-cover object-center"
+        />
       </div>
       <div className="flex flex-1 flex-col bg-white p-6 lg:p-4">
         <div>
