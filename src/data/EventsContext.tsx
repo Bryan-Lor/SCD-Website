@@ -1,29 +1,29 @@
 import { createContext, useContext } from "react";
 
 export type EventType = {
-  // author: string;
-  // categories: string[];
-  // content: string;
-  // contentSnippet: string;
-  // creator: string;
-  // enclosure: { url: string };
-  // guid: string;
-  // isoDate: string;
-  // link: string;
-  // pubDate: string;
-  // title: string;
+  author: string;
+  categories: string[];
+  content: string;
+  contentSnippet: string;
+  creator: string;
+  enclosure: { url: string };
+  guid: string;
+  isoDate: string;
+  link: string;
+  pubDate: string;
+  title: string;
 
-  author: any;
-  categories: any;
-  content: any;
-  contentSnippet: any;
-  creator: any;
-  enclosure: any;
-  guid: any;
-  isoDate: any;
-  link: any;
-  pubDate: any;
-  title: any;
+  // author: any;
+  // categories: any;
+  // content: any;
+  // contentSnippet: any;
+  // creator: any;
+  // enclosure: any;
+  // guid: any;
+  // isoDate: any;
+  // link: any;
+  // pubDate: any;
+  // title: any;
 };
 
 export const rssUrl =

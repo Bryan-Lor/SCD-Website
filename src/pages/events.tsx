@@ -27,7 +27,8 @@ const Events: NextPage = () => {
               <div className="h-0.5 w-72 bg-white" />
             </div>
             {events.length > 0 ? (
-              events.map((event, index) => (
+              (events.map((event, index) => (
+                // events.map({title: string, contentSnippet: string[], link: string, image:string} => (
                 <EventCard
                   key={index}
                   title={event.title}
@@ -35,7 +36,7 @@ const Events: NextPage = () => {
                   link={event.link}
                   image={event.enclosure.url}
                 />
-              ))
+              )) as JSX.Element[]) // type assertion here
             ) : (
               <p className="text-difference text-center">No Upcoming Events.</p>
             )}
