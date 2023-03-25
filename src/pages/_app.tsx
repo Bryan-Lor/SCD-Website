@@ -15,7 +15,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       const data: EventType[] = await res.json();
       setEvents(data);
     }
-    fetchEvents();
+    void fetchEvents();
   }, []);
 
   console.log(events);
