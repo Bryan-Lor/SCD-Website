@@ -11,49 +11,49 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   useEffect(() => {
     async function fetchEvents() {
-      const feed = await new Parser<EventType[]>()
-        .parseURL(rssUrl)
-        .catch()
-        .then((data) => {
-          if (data.items.length > 0) {
-            const mappedEvents: EventType[] = data.items.map(
-              (item): EventType => ({
-                categories: item.categories,
-                content: item.content,
-                contentSnippet: item.contentSnippet,
-                creator: item.creator,
-                enclosure: item.enclosure,
-                guid: item.guid,
-                isoDate: item.isoDate,
-                link: item.link,
-                pubDate: item.pubDate,
-                title: item.title,
-              })
-            );
-            setEvents(mappedEvents);
-          }
-          // "Sorry, No Upcoming Events."
-          fetchEvents();
-        });
-      // if (feed.items.length > 0) {
-      //   const mappedEvents: EventType[] = feed.items.map(
-      //     (item): EventType => ({
-      //       categories: item.categories,
-      //       content: item.content,
-      //       contentSnippet: item.contentSnippet,
-      //       creator: item.creator,
-      //       enclosure: item.enclosure,
-      //       guid: item.guid,
-      //       isoDate: item.isoDate,
-      //       link: item.link,
-      //       pubDate: item.pubDate,
-      //       title: item.title,
-      //     })
-      //   );
-      //   setEvents(mappedEvents);
-      // }
-      // // "Sorry, No Upcoming Events."
-      // fetchEvents();
+      const feed = await new Parser<EventType[]>().parseURL(rssUrl);
+      // .catch()
+      // .then((data) => {
+      //   if (data.items.length > 0) {
+      //     const mappedEvents: EventType[] = data.items.map(
+      //       (item): EventType => ({
+      //         categories: item.categories,
+      //         content: item.content,
+      //         contentSnippet: item.contentSnippet,
+      //         creator: item.creator,
+      //         enclosure: item.enclosure,
+      //         guid: item.guid,
+      //         isoDate: item.isoDate,
+      //         link: item.link,
+      //         pubDate: item.pubDate,
+      //         title: item.title,
+      //       })
+      //     );
+      //     setEvents(mappedEvents);
+      //   }
+      //   // "Sorry, No Upcoming Events."
+      //   fetchEvents();
+      // });
+
+      if (feed.items.length > 0) {
+        const mappedEvents: EventType[] = feed.items.map(
+          (item): EventType => ({
+            categories: item.categories,
+            content: item.content,
+            contentSnippet: item.contentSnippet,
+            creator: item.creator,
+            enclosure: item.enclosure,
+            guid: item.guid,
+            isoDate: item.isoDate,
+            link: item.link,
+            pubDate: item.pubDate,
+            title: item.title,
+          })
+        );
+        setEvents(mappedEvents);
+      }
+      // "Sorry, No Upcoming Events."
+      void fetchEvents();
     }
   }, []);
 
