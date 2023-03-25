@@ -3,7 +3,7 @@ import { createContext, useContext } from "react";
 // import Parser from "rss-parser";
 
 export type EventType = {
-  author: string | undefined;
+  // author: string | undefined;
   categories: string[] | undefined;
   content: string | undefined;
   contentSnippet: string | undefined;

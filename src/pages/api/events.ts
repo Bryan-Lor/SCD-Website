@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   const feed = await new Parser().parseURL(rssUrl);
   const mappedEvents = feed.items.map((item) => ({
-    author: item.author,
+    // author: item.author,
     categories: item.categories,
     content: item.content,
     contentSnippet: item.contentSnippet,
