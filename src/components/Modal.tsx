@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 const Modal: React.FC = () => {
-  const menu = document.getElementById("menu");
+  //   const menu = document.getElementById("menu");
   const showMenu = () => {
-    menu?.classList.toggle("hidden");
+    // menu?.classList.toggle("hidden");
+    console.log("Clicked Show Menu");
   };
 
   return (
