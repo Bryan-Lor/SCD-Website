@@ -63,7 +63,8 @@ const EventCard: React.FC<{
         <p>Sept</p> */}
         <img
           src={image}
-          alt={title + " Banner"}
+          // alt={title + " Banner"}
+          alt={title}
           className="h-full w-full object-cover object-center"
         />
       </div>

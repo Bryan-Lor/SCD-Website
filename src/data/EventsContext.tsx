@@ -1,7 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import Parser from "rss-parser";
+import { createContext, useContext } from "react";
 
-export type EventType = {
+export interface EventType {
   // author: string | undefined;
   categories: string[] | undefined;
   content: string | undefined;
@@ -13,7 +12,7 @@ export type EventType = {
   link: string | undefined;
   pubDate: string | undefined;
   title: string | undefined;
-};
+}
 
 export const rssUrl =
   "https://getinvolved.wayne.edu/organization/scd/events.rss";
