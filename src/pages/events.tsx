@@ -1,5 +1,5 @@
 import { useThemeContext } from "~/data/ThemeContext";
-import { EventType, useEventsContext } from "~/data/EventsContext";
+import { useEventsContext } from "~/data/EventsContext";
 import { type NextPage } from "next";
 import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
@@ -8,8 +8,7 @@ import Link from "next/link";
 
 const Events: NextPage = () => {
   const { darkTheme } = useThemeContext();
-  // const events: { [key: string]: any }[] = useEventsContext();
-  const events: EventType[] = useEventsContext();
+  const events = useEventsContext();
 
   return (
     <>
@@ -63,8 +62,7 @@ const EventCard: React.FC<{
         <p>Sept</p> */}
         <img
           src={image}
-          // alt={title + " Banner"}
-          alt={title}
+          alt={title ? title + " Banner" : "Error getting title"}
           className="h-full w-full object-cover object-center"
         />
       </div>

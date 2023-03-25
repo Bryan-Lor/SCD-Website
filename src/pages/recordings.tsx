@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Footer from "~/components/Footer";
 import HeaderTag from "~/components/HeaderTag";
+import Modal from "~/components/Modal";
 import Nav from "~/components/Nav";
 import { useThemeContext } from "~/data/ThemeContext";
 
@@ -23,6 +24,7 @@ const Recordings: NextPage = () => {
               <h2 className="text-4xl">Recordings</h2>
               <div className="h-0.5 w-72 bg-white" />
             </div>
+            <Modal />
           </div>
         </main>
         <Footer className="mx-auto lg:max-w-screen-xl" />
