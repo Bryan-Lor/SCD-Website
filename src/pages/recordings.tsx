@@ -24,7 +24,7 @@ const Recordings: NextPage = () => {
               <h2 className="text-4xl">Recordings</h2>
               <div className="h-0.5 w-72 bg-white" />
             </div>
-            <Modal />
+            <Modal title="Video Title" desc="Description goes here." />
           </div>
         </main>
         <Footer className="mx-auto lg:max-w-screen-xl" />
