@@ -2,8 +2,8 @@ import { type AppType } from "next/dist/shared/lib/utils";
 import React, { useEffect, useState } from "react";
 import { ThemeContext } from "~/data/ThemeContext";
 import { EventsContext, EventType, rssUrl } from "~/data/EventsContext";
-import Parser from "rss-parser";
 import "~/styles/globals.css";
+import Parser from "rss-parser";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   const [darkTheme, setDarkTheme] = useState<boolean>(true);
@@ -11,35 +11,28 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   useEffect(() => {
     async function fetchEvents() {
-      try {
-        const parser = new Parser<EventType[]>();
-        const feed = await parser.parseURL(rssUrl);
-        if (feed.items.length > 0) {
-          const mappedEvents: EventType[] = feed.items.map(
-            (item): EventType => ({
-              // author: item.author,
-              categories: item.categories,
-              content: item.content,
-              contentSnippet: item.contentSnippet,
-              creator: item.creator,
-              enclosure: item.enclosure,
-              guid: item.guid,
-              isoDate: item.isoDate,
-              link: item.link,
-              pubDate: item.pubDate,
-              title: item.title,
-            })
-          );
-          setEvents(mappedEvents);
-        }
-      } catch (error) {
-        console.error("Error fetching events:", error);
+      const feed = await new Parser<EventType[]>().parseURL(rssUrl);
+      if (feed.items.length > 0) {
+        const mappedEvents: EventType[] = feed.items.map(
+          (item): EventType => ({
+            categories: item.categories,
+            content: item.content,
+            contentSnippet: item.contentSnippet,
+            creator: item.creator,
+            enclosure: item.enclosure,
+            guid: item.guid,
+            isoDate: item.isoDate,
+            link: item.link,
+            pubDate: item.pubDate,
+            title: item.title,
+          })
+        );
+        setEvents(mappedEvents);
       }
+      // "Sorry, No Upcoming Events."
+      fetchEvents();
     }
-    fetchEvents();
   }, []);
-
-  // console.log("events: ", events);
 
   return (
     <EventsContext.Provider value={events}>

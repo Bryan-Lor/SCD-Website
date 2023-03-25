@@ -1,5 +1,5 @@
 import { useThemeContext } from "~/data/ThemeContext";
-import { useEventsContext } from "~/data/EventsContext";
+import { EventType, useEventsContext } from "~/data/EventsContext";
 import { type NextPage } from "next";
 import HeaderTag from "~/components/HeaderTag";
 import Nav from "~/components/Nav";
@@ -8,7 +8,8 @@ import Link from "next/link";
 
 const Events: NextPage = () => {
   const { darkTheme } = useThemeContext();
-  const events: { [key: string]: any }[] = useEventsContext();
+  // const events: { [key: string]: any }[] = useEventsContext();
+  const events: EventType[] = useEventsContext();
 
   return (
     <>
@@ -33,7 +34,7 @@ const Events: NextPage = () => {
                   title={event.title}
                   desc={event.contentSnippet}
                   link={event.link}
-                  image={event.enclosure.url}
+                  image={event.enclosure ? event.enclosure.url : undefined}
                 />
               ))
             ) : (
@@ -50,10 +51,10 @@ const Events: NextPage = () => {
 export default Events;
 
 const EventCard: React.FC<{
-  title: string;
-  desc: string;
-  link: string;
-  image: string;
+  title: string | undefined;
+  desc: string | undefined;
+  link: string | undefined;
+  image: string | undefined;
 }> = ({ title, desc, link, image }) => {
   return (
     <div className="flex w-full flex-col overflow-hidden rounded-md lg:flex-row">
@@ -70,9 +71,11 @@ const EventCard: React.FC<{
         <div>
           <h2>{title}</h2>
           <hr />
-          <p className="text-base">{desc.replace(title, "")}</p>
+          <p className="text-base">
+            {desc && title ? desc.replace(title, "") : ""}
+          </p>
           <Link
-            href={link}
+            href={link ? link : ""}
             className="float-right rounded bg-yellowGrad py-1 px-8 text-base text-white"
           >
             RSVP

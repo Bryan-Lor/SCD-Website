@@ -1,4 +1,5 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import Parser from "rss-parser";
 
 export type EventType = {
   // author: string | undefined;
@@ -22,3 +23,40 @@ export const rssUrl =
 export const EventsContext = createContext<EventType[]>([]);
 
 export const useEventsContext = () => useContext(EventsContext);
+
+// const [events, setEvents] = useState<EventType[]>([]);
+
+// export function useEventState<T>(initialState: T): [T, (newValue: T) => void] {
+//   const [state, setState] = useState<T>(initialState);
+
+//   const updateState = (newValue: T) => {
+//     setState(newValue);
+//   };
+
+//   return [state, updateState];
+// }
+
+// useEffect(() => {
+//   async function fetchEvents() {
+//     const feed = await new Parser<EventType[]>().parseURL(rssUrl);
+//     if (feed.items.length > 0) {
+//       const mappedEvents: EventType[] = feed.items.map(
+//         (item): EventType => ({
+//           categories: item.categories,
+//           content: item.content,
+//           contentSnippet: item.contentSnippet,
+//           creator: item.creator,
+//           enclosure: item.enclosure,
+//           guid: item.guid,
+//           isoDate: item.isoDate,
+//           link: item.link,
+//           pubDate: item.pubDate,
+//           title: item.title,
+//         })
+//       );
+//       setEvents(mappedEvents);
+//     }
+//     // "Sorry, No Upcoming Events."
+//     fetchEvents();
+//   }
+// }, []);
