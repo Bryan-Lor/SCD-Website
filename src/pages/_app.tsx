@@ -1,8 +1,9 @@
 import { type AppType } from "next/dist/shared/lib/utils";
 import React, { useEffect, useState } from "react";
 import { ThemeContext } from "~/data/ThemeContext";
-import { EventsContext, EventType, rssUrl } from "~/data/EventsContext";
+import { EventsContext, EventType } from "~/data/EventsContext";
 import "~/styles/globals.css";
+import { getEvents } from "./api/events";
 // import Parser from "rss-parser";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
@@ -11,14 +12,23 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   useEffect(() => {
     async function fetchEvents() {
-      const res = await fetch("/api/events");
-      const data: EventType[] = await res.json();
-      setEvents(data);
+      const events = await getEvents();
+      setEvents(events);
     }
+
     void fetchEvents();
   }, []);
 
-  console.log(events);
+  // useEffect(() => {
+  //   async function fetchEvents() {
+  //     const res = await fetch("/api/events");
+  //     const data: EventType[] = await res.json();
+  //     setEvents(data);
+  //   }
+  //   void fetchEvents();
+  // }, []);
+
+  // console.log(events);
 
   // useEffect(() => {
   //   async function fetchEvents() {

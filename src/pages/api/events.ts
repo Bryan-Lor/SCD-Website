@@ -1,24 +1,40 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import Parser from "rss-parser";
 import { EventType, rssUrl } from "~/data/EventsContext";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const feed = await new Parser().parseURL(rssUrl);
-  const mappedEvents: EventType[] = feed.items.map((item) => ({
-    // author: item.author,
-    categories: item.categories,
-    content: item.content,
-    contentSnippet: item.contentSnippet,
-    creator: item.creator,
-    enclosure: item.enclosure,
-    guid: item.guid,
-    isoDate: item.isoDate,
-    link: item.link,
-    pubDate: item.pubDate,
-    title: item.title,
-  }));
-  res.status(200).json(mappedEvents);
+let cachedEvents: EventType[] | null = null;
+
+async function fetchEvents(): Promise<EventType[]> {
+  const parser = new Parser<EventType[]>();
+  const feed = await parser.parseURL(rssUrl);
+
+  if (feed.items.length > 0) {
+    const mappedEvents: EventType[] = feed.items.map(
+      (item): EventType => ({
+        // author: item.author,
+        categories: item.categories,
+        content: item.content,
+        contentSnippet: item.contentSnippet,
+        creator: item.creator,
+        enclosure: item.enclosure,
+        guid: item.guid,
+        isoDate: item.isoDate,
+        link: item.link,
+        pubDate: item.pubDate,
+        title: item.title,
+      })
+    );
+
+    cachedEvents = mappedEvents;
+    return mappedEvents;
+  }
+
+  return [];
+}
+
+export async function getEvents(): Promise<EventType[]> {
+  if (cachedEvents) {
+    return cachedEvents;
+  }
+
+  return fetchEvents();
 }
