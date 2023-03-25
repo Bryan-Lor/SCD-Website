@@ -54,7 +54,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       }
     }
     // "Sorry, No Upcoming Events."
-    fetchEvents();
+    void fetchEvents();
   }, []);
 
   return (
