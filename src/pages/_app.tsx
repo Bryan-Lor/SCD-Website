@@ -12,7 +12,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   useEffect(() => {
     async function fetchEvents() {
       const res = await fetch("/api/events");
-      const data = await res.json();
+      const data: EventType[] = await res.json();
       setEvents(data);
     }
     fetchEvents();
