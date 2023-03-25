@@ -12,7 +12,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   useEffect(() => {
     async function fetchEvents() {
       try {
-        const feed = await new Parser<EventType[]>().parseURL(rssUrl);
+        const parser = new Parser<EventType[]>();
+        const feed = await parser.parseURL(rssUrl);
         if (feed.items.length > 0) {
           const mappedEvents: EventType[] = feed.items.map(
             (item): EventType => ({
@@ -32,7 +33,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           setEvents(mappedEvents);
         }
       } catch (error) {
-        console.error("Error fetching events: ", error);
+        console.error("Error fetching events:", error);
       }
     }
     fetchEvents();
