@@ -52,9 +52,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         );
         setEvents(mappedEvents);
       }
-      // "Sorry, No Upcoming Events."
-      void fetchEvents();
     }
+    // "Sorry, No Upcoming Events."
+    fetchEvents();
   }, []);
 
   return (
