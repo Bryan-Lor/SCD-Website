@@ -1,19 +1,12 @@
 // import Link from "next/link";
 
-const Modal: React.FC<{ title: string; desc: string }> = ({ title, desc }) => {
-  const showMenu = () => {
-    console.log("Clicked Show Menu");
-  };
-
+const Modal: React.FC<{ title: string; desc: string; showMenu: Function }> = ({
+  title,
+  desc,
+  showMenu,
+}) => {
   return (
     <div className="relative flex items-center justify-center">
-      <button
-        onClick={showMenu}
-        className="absolute top-48 z-0 rounded bg-gray-800 py-2 px-7 text-base text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2"
-      >
-        Open
-      </button>
-
       <div
         id="menu"
         className="sticky-0 fixed top-0 h-full w-full bg-gray-900 bg-opacity-80"

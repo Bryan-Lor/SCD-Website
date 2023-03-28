@@ -18,7 +18,7 @@ const TeamCard: React.FC<member> = ({
   return (
     // lg:hover:scale-105 <-- For Hover Responsiveness
     <div className="relative flex-shrink-0 flex-grow overflow-hidden rounded-[0.2rem] bg-white">
-      <div className="w-[18.75rem relative h-[18.75rem] overflow-hidden">
+      <div className="relative h-[18.75rem] w-[18.75rem] overflow-hidden">
         <Image
           className="object-cover object-center transition duration-[225ms] ease-in md:hover:scale-105"
           fill
