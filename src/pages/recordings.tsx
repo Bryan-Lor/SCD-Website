@@ -9,7 +9,7 @@ import { useThemeContext } from "~/data/ThemeContext";
 const Recordings: NextPage = () => {
   const { darkTheme } = useThemeContext();
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
     setShowModal((current) => !current);

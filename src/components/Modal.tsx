@@ -13,7 +13,15 @@ const Modal: React.FC<{ title: string; desc: string; showMenu: Function }> = ({
       >
         <div className="flex  items-center justify-center py-48 px-4 2xl:container md:px-28 2xl:mx-auto">
           <div className="relative flex w-96 flex-col items-center justify-center bg-gray-800 py-16 px-4 md:w-auto md:px-24 xl:py-24 xl:px-36">
-            <div role="banner">Video</div>
+            <div role="banner w-full h-full bg-red-500">
+              {/* <iframe
+                width="100%"
+                height="100%"
+                allowFullScreen
+                // className="h-full w-full bg-green-500"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              ></iframe> */}
+            </div>
             <div className="mt-12">
               <h2
                 role="title"
