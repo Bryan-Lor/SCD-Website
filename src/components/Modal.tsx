@@ -1,16 +1,15 @@
 // import Link from "next/link";
 
-const Modal: React.FC<{ title: string; desc: string; showMenu: Function }> = ({
-  title,
-  desc,
-  showMenu,
-}) => {
+const Modal: React.FC<{
+  title: string;
+  desc: string;
+  toggleMenu: () => void;
+}> = ({ title, desc, toggleMenu }) => {
   return (
     <div className="relative flex items-center justify-center">
       <button
         onClick={() => {
-          showMenu;
-          console.log("clicked");
+          toggleMenu();
         }}
         aria-label="close"
         id="menu"
@@ -21,23 +20,15 @@ const Modal: React.FC<{ title: string; desc: string; showMenu: Function }> = ({
           <div className="container relative z-50 flex flex-col items-center justify-center bg-gray-800 py-16">
             {/* <div role="banner" className="h-[42rem] w-full bg-black"> */}
             <div role="banner" className="h-[42vh] w-full bg-black">
-              {/* <iframe
-                width="100%"
-                height="100%"
-                allowFullScreen
-                // className="h-full w-full bg-green-500"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY"
-              ></iframe> */}
               <iframe
-                // width="560"
-                // height="315"
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/nUOMTViKsko"
+                // src="https://www.youtube.com/embed/nUOMTViKsko"
+                src="https://www.youtube.com/embed/videoseries?list=PLMdbXAKJy69Qg4gb5o1XqV-a51ovCwmpv"
                 title="YouTube video player"
-                frameborder="0"
+                // frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
             <div className="mt-12">
@@ -66,7 +57,7 @@ const Modal: React.FC<{ title: string; desc: string; showMenu: Function }> = ({
               </p>
             </div> */}
             {/* <button
-              onClick={showMenu}
+              onClick={toggleMenu}
               className="text-difference absolute top-8 right-8 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2"
               aria-label="close"
             >

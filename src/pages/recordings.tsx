@@ -42,7 +42,7 @@ const Recordings: NextPage = () => {
               <Modal
                 title="Video Title"
                 desc="Description goes here."
-                showMenu={toggleModal}
+                toggleMenu={toggleModal}
               />
             ) : null}
           </div>
